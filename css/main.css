@@ -1,0 +1,101 @@
+/* CSS created by Henry James https://henryjames.space */
+/**/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .sign-up,
+  .feature-1,
+  .feature-2,
+  .feature-3 {
+    width: 50%;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+
+  .page {
+    width: 960px;
+    margin: 0 auto;
+  }
+  .feature-1,
+  .feature-2,
+  .feature-3 {
+    width: 33.3%;
+  }
+  .header {
+    height: 400px;
+}
+  .content {
+    order: 2;
+  }
+}
+/* -------------- All devices -------------- */
+html {
+  height: 100%;
+}
+body {
+  background-color: #ffffff;
+  color: #cdc7c7;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+.shadow {
+  box-shadow: 0px 0px 7px 3px rgba(19,206,181,0.21);
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  width: 95%;
+  height: 300px;
+  margin: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+}
+
+.menu {
+  background-color: #faf9f9;
+  height: 80px;
+}
+
+.header {
+  background-color: #faf9f9;
+  margin: 2vw;
+}
+
+.content {
+  background-color: #faf9f9;
+  height: 600px;
+}
+
+.sign-up {
+  background-color: #faf9f9;
+}
+
+.feature-1 {
+  background-color: #faf9f9;
+}
+
+.feature-2 {
+  background-color: #cdc7c7;
+}
+
+.feature-3 {
+  background-color: #faf9f9;
+}
