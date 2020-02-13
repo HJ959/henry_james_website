@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <meta name='viewport'
-      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Henry James</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-  </head>
-  <body>
+</head>
 
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-1 col-xl-1">
-            <nav class="navbar navbar-light navbar-expand-sm px-0 flex-row flex-nowrap">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarWEX" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                 <div class="navbar-collapse collapse" id="navbarWEX">
-                    <div class="nav flex-sm-column flex-row">
-                        <a class="nav-item nav-link active" href="#">Home</a>
-                        <a href="#" class="nav-item nav-link">Mint Tea</a>
-                        <a href="#" class="nav-item nav-link">Cyber Studio</a>
-                        <a href="#" class="nav-item nav-link">Contact</a>
-                    </div>
+<body>
+    <canvas id="background_canvas"></canvas>
+    <header>
+
+        <div class="page" id="shadowChange">
+          <div class="page_header"></div>
+          <div class="page_non_header">
+
+                <div class='section' id="shadowChange">
+                    <!-- Link all the words in the text below to your stuff -->
+                    <h1>DJ/Producer, event manager, label owner, <a class="click_a" href="https://github.com/HJ959">coder</a> and <a class="click_a" onclick="showAV()">audio visual</a> practitioner specialising in all things vibrant and groovy currently based in Bristol.</h1>
                 </div>
-            </nav>
+                <div class='section' id="shadowChange">
+                    <h1>Contact henryjaames [at] gmail [dot] com</h1>
+                </div>
+            </div>
         </div>
 
-  <div class="container">
-    <div class='page'>
+    </header>
+    <main>
+        <!-- Draggable DIV CATALOGUE -->
+        <div class="section" id="draggableDivAV">
+            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+            <div class="section" id="draggableDivAVHeader">Virtual Boundaries</div>
+            <button id="previousButton" onclick="catCyclePrevious()">PREVIOUS</button>
+            <button id="nextButton" onclick="catCycleNext()" value="0">NEXT</button>
+        </div>
+        <div id="catMT001">
+        </div>
+        </div>
+    </main>
 
-      <div class='section shadow'>
-        <h1>DJ/Producer, party organiser, label owner, coder and audio visual practitioner specialising in all things vibrant and groovy currently based in Bristol.</h1>
-      </div>
-      <div class='section shadow'>
-        <h1>Contact [ henryjaames [at] gmail [dot] com ]</h1>
-      </div>
-    </div>
-</div>
-    </div>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    <footer>
+      <script type="text/javascript" src="js/main.js"></script>
+    </footer>
+</body>
 
 </html>
