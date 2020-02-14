@@ -240,6 +240,7 @@ function dragElement(elmnt) {
 // Background animation
 var canvas = document.querySelector('canvas');
 var context = canvas.getContext('2d');
+var page = document.getElementById('background_canvas');
 
 var sizeW = window.innerWidth;
 var sizeH = window.innerHeight;
@@ -299,13 +300,13 @@ function animate() {
         x = getRandomInt(0, width);
         y = getRandomInt(0, height);
 
-        a = getRandomInt(0, width);
-        b = getRandomInt(0, height);
+        a = getRandomInt(0, (width/2));
+        b = getRandomInt(height, height);
 
-        c = getRandomInt(0, width);
+        c = getRandomInt((width/2), width);
         d = getRandomInt(0, height);
 
-        opacity = (getRandomInt(0, 100) / 100);
+        opacity = (getRandomInt(0, 80) / 100);
 
         hueRadial = getRandomInt(-180, 180);
         colourChanging = changeHue("#fa5900", hueRadial);
@@ -316,8 +317,8 @@ function animate() {
         context.lineTo(c, d);
         context.closePath();
 
-
         context.filter = "drop-shadow(9px 9px 2px #e81)";
+        context.filter = "blur(3px)";
 
         gColour = "rgba(" + colourChanging + "," + opacity + ")";
 
@@ -327,7 +328,6 @@ function animate() {
         context.fill();
 
         backgroundCounter++;
-
     }
 }
 function resizeCanvasToDisplaySize(backgroundCounter) {
