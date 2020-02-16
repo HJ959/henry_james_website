@@ -1,16 +1,27 @@
 /* CSS created by Henry James https://henryjames.space */
 
 /* Mobile Styles */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 451px) {
   h1 {
     font-size: calc(1em + 4vw);
+  }
+  .headerElmnt {
+    font-size: 0.5em;
+  }
+  .page {
+    height: 650px;
+    margin: 0 auto;
   }
 }
 
 /* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (min-width: 452px) and (max-width: 960px) {
   h1 {
-    font-size: calc(1em + 4vw);
+    font-size: calc(1em + 3vw);
+  }
+  .page {
+    height: 600px;
+    margin: 0 auto;
   }
 }
 
@@ -21,6 +32,7 @@
   }
   .page {
     width: 960px;
+    height: 670px;
     margin: 0 auto;
   }
 }
@@ -36,52 +48,97 @@ html {
 }
 
 body {
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(240,240,240,1);
   color: #1f0000;
   font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
 .click_a {
+  transition: color 0.7s ease;
   color: #fba7ff;
   text-decoration: none;
 }
 
+.click_a:hover {
+  color: #64ffff;
+}
+
 #shadowChange {
-  box-shadow: 10px 10px 7px -6px rgba(31,0,0,0.61);
+  box-shadow: 10px 10px 7px -6px rgba(220,220,222,0.61);
+}
+#shadowSubtle {
+  box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
 }
 
 .page {
-  border: 4px solid #fa5900;
   margin-left: auto;
   margin-top: 1vh;
   flex-wrap: wrap;
-  display: flex;
   position: relative;
   align-items: center;
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(243,243,243,0.95);
+  border-radius: 32px 32px 32px 32px;
+  z-index: 3;
 }
 
-.page_header {
-  border-bottom: 4px solid #fa5900;
+.pageMain {
+  position: absolute;
+  display: inline-block;
+  border-radius: 32px 32px 0px 0px;
+  z-index: 3;
+  top: 10%;
+  bottom: 10%;
+
+}
+
+.pageHeader {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  bottom: 95%;
+  bottom: 90%;
+  z-index: 3;
+}
+
+.headerElmnt {
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+  z-index: 4;
+  text-align: left;
+  padding: 1%;
+  text-align: center;
+
+  margin: auto;
+  overflow: hidden;
+  background-color: rgba(245, 245, 245, 0.7);
+  border-radius: 32px;
 }
 
 .section {
-  border: 4px solid #fa5900;
+  background-color: rgba(241, 241, 241, 0.7);
+  transition: border 0.1s ease-in-out;
   width: 85%;
-  margin-bottom: 4vh;
-  margin-top: 6vh;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
   height: auto;
-  padding: 4vw;
+  padding: 4vh;
   display: flex;
   text-align: center;
-  z-index: 1;
+  z-index: 4;
+  border-radius: 32px 32px 32px 32px;
+  box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
+}
+
+.section:hover {
+  box-shadow: 0px 0px 10px 8px rgba(220,240,230,0.6);
+}
+
+.headerButton {
+  width: 100%;
+  height: 100%;
 }
 
 #draggableDivAV {
@@ -95,4 +152,5 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: -1;
 }
