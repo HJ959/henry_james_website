@@ -317,8 +317,8 @@ function animate() {
         context.lineTo(c, d);
         context.closePath();
 
-        context.filter = "drop-shadow(9px 9px 2px #e81)";
-        context.filter = "blur(3px)";
+        //context.filter = "drop-shadow(9px 9px 2px #e81)";
+        //context.filter = "blur(3px)";
 
         gColour = "rgba(" + colourChanging + "," + opacity + ")";
 
