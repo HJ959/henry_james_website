@@ -10,7 +10,8 @@
   }
   .page {
     height: 650px;
-    margin: 0 auto;
+    margin-left: 5%;
+    margin-right: 5%;;
   }
 }
 
@@ -21,7 +22,8 @@
   }
   .page {
     height: 600px;
-    margin: 0 auto;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
@@ -64,27 +66,25 @@ body {
 }
 
 #shadowChange {
-  box-shadow: 10px 10px 7px -6px rgba(220,220,222,0.61);
+  box-shadow: 10px 10px 7px -6px rgba(220,220,222,1);
 }
 #shadowSubtle {
   box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
 }
 
 .page {
-  margin-left: auto;
   margin-top: 1vh;
   flex-wrap: wrap;
   position: relative;
   align-items: center;
   background-color: rgba(243,243,243,0.95);
-  border-radius: 32px 32px 32px 32px;
+  border-radius: 32px;
   z-index: 3;
 }
 
 .pageMain {
   position: absolute;
   display: inline-block;
-  border-radius: 32px 32px 0px 0px;
   z-index: 3;
   top: 10%;
   bottom: 10%;
@@ -98,6 +98,7 @@ body {
   width: 100%;
   bottom: 90%;
   z-index: 3;
+  border-radius: 32px 32px 0px 0px;
 }
 
 .headerElmnt {
@@ -108,10 +109,9 @@ body {
   text-align: left;
   padding: 1%;
   text-align: center;
-
   margin: auto;
   overflow: hidden;
-  background-color: rgba(245, 245, 245, 0.7);
+  box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
   border-radius: 32px;
 }
 
@@ -128,12 +128,12 @@ body {
   display: flex;
   text-align: center;
   z-index: 4;
-  border-radius: 32px 32px 32px 32px;
+  border-radius: 32px;
   box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
 }
 
 .section:hover {
-  box-shadow: 0px 0px 10px 8px rgba(220,240,230,0.6);
+  box-shadow: 0px 0px 10px 8px rgba(0,200,200,0.2);
 }
 
 .headerButton {
