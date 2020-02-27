@@ -10,8 +10,8 @@
   }
   .page {
     height: 650px;
-    margin-left: 5%;
-    margin-right: 5%;;
+    margin-left: 1%;
+    margin-right: 1%;
   }
 }
 
@@ -25,6 +25,9 @@
     margin-left: 5%;
     margin-right: 5%;
   }
+  .section {
+    width: 85%;
+  }
 }
 
 /* Desktop Styles */
@@ -37,13 +40,11 @@
     height: 670px;
     margin: 0 auto;
   }
+  .section {
+    width: 85%;
+  }
 }
 /* -------------- All devices -------------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 html {
   height: 100%;
   overflow-x: hidden;
@@ -51,7 +52,7 @@ html {
 
 body {
   background-color: rgba(240,240,240,1);
-  color: #1f0000;
+  color: rgb(255,255,255);
   font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
@@ -65,19 +66,16 @@ body {
   color: #64ffff;
 }
 
-#shadowChange {
-  box-shadow: 10px 10px 7px -6px rgba(220,220,222,1);
-}
-#shadowSubtle {
-  box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
+.shadowSubtle {
+  box-shadow: 0px 0px 5px 2px rgba(230,230,230,0.5);
 }
 
 .page {
-  margin-top: 1vh;
+  margin-top: auto;
   flex-wrap: wrap;
   position: relative;
   align-items: center;
-  background-color: rgba(243,243,243,0.95);
+
   border-radius: 32px;
   z-index: 3;
 }
@@ -87,7 +85,7 @@ body {
   display: inline-block;
   z-index: 3;
   top: 10%;
-  bottom: 10%;
+  bottom: 0;
 
 }
 
@@ -111,16 +109,14 @@ body {
   text-align: center;
   margin: auto;
   overflow: hidden;
-  box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
+  box-shadow: 0px 0px 5px 2px rgba(230,230,230,1);
   border-radius: 32px;
 }
 
 .section {
-  background-color: rgba(241, 241, 241, 0.7);
   transition: border 0.1s ease-in-out;
-  width: 85%;
-  margin-bottom: 6%;
-  margin-top: 5%;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
   margin-left: auto;
   margin-right: auto;
   height: auto;
@@ -129,12 +125,11 @@ body {
   text-align: center;
   z-index: 4;
   border-radius: 32px;
-  box-shadow: 0px 0px 10px 4px rgba(230,230,230,1);
   overflow: hidden;
 }
 
 .section:hover {
-  box-shadow: 0px 0px 10px 8px rgba(0,200,200,0.2);
+  box-shadow: 0px 0px 5px 2px rgba(230,230,230,1);
 }
 
 .headerButton {
@@ -142,11 +137,8 @@ body {
   height: 100%;
 }
 
-#draggableDivAV {
+.audioVisual {
   display: none;
-  position: relative;
-  z-index: -1;
-  width: 100%;
 }
 
 #background_canvas {

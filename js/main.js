@@ -180,62 +180,20 @@ function myMove() {
   }
 //////////////////////////////////////////////////////////////////////////////
 function showAV() {
-  var x = document.getElementById("draggableDivAV");
+  var x = document.getElementsByClassName("audioVisual");
+  var y = document.getElementsByClassName("homeInfo");
   if (x.style.display === "block") {
     x.style.display = "none";
-
     x.visibility = "visible";
+    y.style.display = "block";
+    y.visibility = "hidden";
   } else {
     x.style.display = "block";
     x.visibility = "hidden";
+    y.style.display = "none";
+    y.visibility = "visible";
   }
-}
-
-// Make the DIV element draggable:
-//elmnt = document.getElementById("draggableDivAV");
-//dragElement(elmnt);
-
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 400, pos4 = 400;
-  if (document.getElementById(elmnt.id + 'Header')) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + 'Header').onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
-
+}/*
 ///////////////////////////////////////////////////////////////////////////////
 // Background animation
 var canvas = document.querySelector('canvas');
@@ -342,10 +300,72 @@ function resizeCanvasToDisplaySize(backgroundCounter) {
     canvas.width = width;
     height = sizeH * dpr;
     canvas.height = height;
-    context.scale(dpr, dpr);
+    //context.scale(dpr, dpr);
 
     backgroundCounter = 0;
     return(backgroundCounter);
   }
   return(backgroundCounter)
+}*/
+//////////////////////////////////////////////////////////////////////////////
+var container;
+var camera, scene, renderer;
+var uniforms;
+
+init();
+animate();
+
+function init() {
+    container = document.getElementById( 'background_canvas' );
+
+    camera = new THREE.Camera();
+    camera.position.z = 1;
+
+    scene = new THREE.Scene();
+
+    var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+
+    uniforms = {
+        u_time: { type: "f", value: 1.0 },
+        u_resolution: { type: "v2", value: new THREE.Vector2() },
+        u_mouse: { type: "v2", value: new THREE.Vector2() }
+    };
+
+    var material = new THREE.ShaderMaterial( {
+        uniforms: uniforms,
+        vertexShader: document.getElementById( 'vertexShader' ).textContent,
+        fragmentShader: document.getElementById( 'fragmentShader' ).textContent
+    } );
+
+    var mesh = new THREE.Mesh( geometry, material );
+    scene.add( mesh );
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setPixelRatio( window.devicePixelRatio );
+
+    container.appendChild( renderer.domElement );
+
+    onWindowResize();
+    window.addEventListener( 'resize', onWindowResize, false );
+
+    document.onmousemove = function(e){
+      uniforms.u_mouse.value.x = e.pageX
+      uniforms.u_mouse.value.y = e.pageY
+    }
+}
+
+function onWindowResize( event ) {
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    uniforms.u_resolution.value.x = renderer.domElement.width;
+    uniforms.u_resolution.value.y = renderer.domElement.height;
+}
+
+function animate() {
+    requestAnimationFrame( animate );
+    render();
+}
+
+function render() {
+    uniforms.u_time.value += 0.05;
+    renderer.render( scene, camera );
 }
