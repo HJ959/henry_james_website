@@ -51,7 +51,7 @@ html {
 }
 
 body {
-  background-color: rgba(240,240,240,1);
+  background-color: rgba(0,0,0,1);
   color: rgb(255,255,255);
   font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
@@ -75,8 +75,7 @@ body {
   flex-wrap: wrap;
   position: relative;
   align-items: center;
-
-  border-radius: 32px;
+  border-radius: 32px 32px 0px 0px;
   z-index: 3;
 }
 
@@ -95,7 +94,7 @@ body {
   left: 0;
   width: 100%;
   bottom: 90%;
-  z-index: 3;
+  z-index: 4;
   border-radius: 32px 32px 0px 0px;
 }
 
@@ -142,8 +141,6 @@ body {
 }
 
 #background_canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  position: absolute;
+  z-index: -2;
 }
