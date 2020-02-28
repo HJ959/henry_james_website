@@ -180,133 +180,25 @@ function myMove() {
   }
 //////////////////////////////////////////////////////////////////////////////
 function showAV() {
-  var x = document.getElementsByClassName("audioVisual");
-  var y = document.getElementsByClassName("homeInfo");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-    x.visibility = "visible";
-    y.style.display = "block";
-    y.visibility = "hidden";
-  } else {
-    x.style.display = "block";
-    x.visibility = "hidden";
-    y.style.display = "none";
-    y.visibility = "visible";
+  var x = document.getElementsByClassName("homeInfo");
+  var y = document.getElementsByClassName("audioVisual");
+
+  for (var i = 0; i < x.length; i++) {
+    for (var j = 0; j < y.length; j++) {
+      if (x[i].style.display === "none") {
+        x[i].style.display = "block";
+        x[i].visibility = "visible";
+        y[j].style.display = "none";
+        y[j].visibility = "hidden";
+      } else {
+        x[i].style.display = "none";
+        x[i].visibility = "hidden";
+        y[j].style.display = "block";
+        y[j].visibility = "visible";
+      }
+    }
   }
-}/*
-///////////////////////////////////////////////////////////////////////////////
-// Background animation
-var canvas = document.querySelector('canvas');
-var context = canvas.getContext('2d');
-var page = document.getElementById('background_canvas');
-
-var sizeW = window.innerWidth;
-var sizeH = window.innerHeight;
-var dpr = window.devicePixelRatio;
-width = sizeW * dpr;
-canvas.width = width;
-height = sizeH * dpr;
-canvas.height = height;
-context.scale(dpr, dpr);
-
-context.lineCap = 'square';
-context.lineWidth = 80;
-
-// animate with fps taken from this thread
-//https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
-var stop = false;
-var frameCount = 0;
-var fps, fpsInterval, startTime, now, then, elapsed;
-var x, y, a, b, c, d, opacity, hueRadial, colourChanging, gColour;
-var backgroundCounter = 0;
-
-startAnimating(1);
-
-function startAnimating(fps) {
-    fpsInterval = 1000 / fps;
-    then = Date.now();
-    startTime = then;
-    console.log(startTime);
-    animate();
 }
-
-function animate() {
-    // stop
-    if (stop) {
-        return;
-    }
-
-    // request another frame
-    requestAnimationFrame(animate);
-    backgroundCounter = resizeCanvasToDisplaySize(backgroundCounter);
-
-    if (backgroundCounter === 7) {
-      return;
-    }
-
-
-    // calc elapsed time since last loop
-    now = Date.now();
-    elapsed = now - then;
-
-    // if enough time has elapsed, draw the next frame
-    if (elapsed > fpsInterval) {
-        // Get ready for next frame by setting then=now, but...
-        // Also, adjust for fpsInterval not being multiple of 16.67
-        then = now - (elapsed % fpsInterval);
-
-        x = getRandomInt(0, width);
-        y = getRandomInt(0, height);
-
-        a = getRandomInt(0, (width/2));
-        b = getRandomInt(height, height);
-
-        c = getRandomInt((width/2), width);
-        d = getRandomInt(0, height);
-
-        opacity = (getRandomInt(0, 80) / 100);
-
-        hueRadial = getRandomInt(-180, 180);
-        colourChanging = changeHue("#fa5900", hueRadial);
-
-        context.beginPath();
-        context.moveTo(x, y);
-        context.lineTo(a, b);
-        context.lineTo(c, d);
-        context.closePath();
-
-        context.filter = "drop-shadow(9px 9px 2px #e81)";
-        context.filter = "blur(3px)";
-
-        gColour = "rgba(" + colourChanging + "," + opacity + ")";
-
-        context.strokeStyle = gColour;
-        context.stroke();
-        context.fillStyle = gColour;
-        context.fill();
-
-        backgroundCounter++;
-    }
-}
-function resizeCanvasToDisplaySize(backgroundCounter) {
-  // look up the size the canvas is being displayed
-  sizeW = window.innerWidth;
-  sizeH = window.innerHeight;
-
-  // adjust displayBuffer size to match
-  if (canvas.width !== sizeW || canvas.height !== sizeH) {
-    dpr = window.devicePixelRatio;
-    width = sizeW * dpr;
-    canvas.width = width;
-    height = sizeH * dpr;
-    canvas.height = height;
-    //context.scale(dpr, dpr);
-
-    backgroundCounter = 0;
-    return(backgroundCounter);
-  }
-  return(backgroundCounter)
-}*/
 //////////////////////////////////////////////////////////////////////////////
 var container;
 var camera, scene, renderer;
