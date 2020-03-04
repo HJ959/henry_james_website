@@ -60,7 +60,7 @@
 
       float plot(vec2 st, float pct, vec2 ms){
         return  smoothstep( ms.x, sin(pct/cos(ms.x)), st.y)
-                / smoothstep( PI*sin(pct*cos(ms.y)), sin(ms.y), st.y);
+                * smoothstep( PI*sin(pct*cos(ms.y)), sin(ms.y), st.y);
       }
 
       void main() {
@@ -73,9 +73,12 @@
 
           vec3 color = vec3(0.99*y,ms.x*x,0.99);
 
-          float pct = plot(st,y,ms);
-          float pct2 = plot(st,x,ms);
-          color = color*(sin(0.03*u_time*pct)*sin(0.05*u_time/tan(pct2)))*vec3(sin(u_time*0.01),sin(u_time*0.03),sin(u_time*0.03));
+          float pct = plot(st,st.y,ms);
+          float pct2 = plot(st,st.x,ms);
+          color = color
+                  *(sin(0.03*u_time*pct)
+                  /sin(0.05*u_time/tan(pct2)))
+                  *vec3(sin(u_time*0.01),cos(0.05*u_time*pct),sin(u_time*0.03));
 
           gl_FragColor = vec4(color,sin(0.1*u_time));
       }
