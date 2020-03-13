@@ -13,14 +13,14 @@
 <body>
 
     <header>
-    </body>
+    
     </header>
     <main>
 
         <div class="page shadowSubtle">
           <div class="pageHeader">
             <div class="headerElmnt">
-              <h1><</h1>
+              <h1><span class="audioVisual" onclick="showAV()"><</span></h1>
             </div>
           </div>
           <div class="pageMain" id="pageBox">
@@ -35,9 +35,8 @@
                 <div class="section audioVisual">
                     <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
                     <h1>Virtual Boundaries</h1>
-                    <button id="previousButton" onclick="catCyclePrevious()">PREVIOUS</button>
-                    <button id="nextButton" onclick="catCycleNext()" value="0">NEXT</button>
-                    <button onclick="showAV()">BACK</button>
+                    <button id="previousButton" onclick="catCyclePrevious()"><</button>
+                    <button id="nextButton" onclick="catCycleNext()" value="0">></button>
                 </div>
             </div>
         </div>

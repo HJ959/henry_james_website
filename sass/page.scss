@@ -1,0 +1,46 @@
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $mainWhite;
+  color: rgb(255,255,255);
+  font-family: $mainFont;
+}
+
+.shadowSubtle {
+  box-shadow: 0px 0px 6px 1px rgba(180,180,180,1);
+}
+
+.page {
+  background-color: $mainWhite;
+  margin-top: auto;
+  position: relative;
+  z-index: 3;
+  @include center-children;
+}
+
+.pageMain {
+  position: absolute;
+  @include center-children;
+  display: inline-block;
+  z-index: 3;
+  top: 10%;
+  bottom: 0;
+  width: 100%;
+}
+
+.audioVisual {
+  display: none;
+}
+
+.homeInfo {
+  display: block;
+}
+
+#background_canvas {
+  position: absolute;
+  z-index: -2;
+}
+
