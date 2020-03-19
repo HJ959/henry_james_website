@@ -41,15 +41,6 @@ function showPrints() {
 
   for (var i = 0; i < shadow.length; i++)  {
     console.log(shadow[i].style.boxShadow);
-    if (shadow[i].style.boxShadow === "") {
-       shadow[i].style.boxShadow = "0px 0px 0px 0px rgba(180,180,180,0)";
-    }
-    if (shadow[i].style.boxShadow === "0px 0px 0px 0px rgba(180,180,180,0)") {
-      shadow[i].style.boxShadow = "0px 0px 6px 1px rgba(180,180,180,1)";
-    }
-    if (shadow[i].style.boxShadow === "0px 0px 6px 1px rgba(180,180,180,1)") {
-      shadow[i].style.boxShadow = "0px 0px 0px 0px rgba(180,180,180,0)";
-    }
   }
 
   for (var i = 0; i < x.length; i++)  {
