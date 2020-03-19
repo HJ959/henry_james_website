@@ -17,26 +17,39 @@
     </header>
     <main>
 
-        <div class="page shadowSubtle">
+        <div onlcick="myMove()" class="page shadowSubtle">
           <div class="pageHeader">
             <div class="headerElmnt">
               <h1><span class="audioVisual" onclick="showAV()"><</span></h1>
+              <h1><span class="prints" onclick="showPrints()"><</span></h1>
+            </div>
+            <div class="headerElmnt">
+              <button class="prints" id="previousButton" onclick="printsPrevious()"><</button>
+              <button class="prints" id="nextButton" onclick="printsNext()" value="0">></button>
             </div>
           </div>
           <div class="pageMain" id="pageBox">
-            <div id="background_canvas"></div>
+            <div class="homeInfo" id="background_canvas"></div>
                 <div class='section homeInfo'>
-                    <h1><a class="click_a" href="https://soundcloud.com/boulderheaduk">DJ/Producer</a>, event manager, <a class="click_a" href="https://mint-tea-records.co.uk">label</a> owner, <a class="click_a" href="https://github.com/HJ959">coder</a> and <a class="click_a" onclick="showAV()">audio visual</a> practitioner specialising in all things vibrant and groovy currently based in Bristol.</h1>
+                    <h1><a class="click_a" href="https://soundcloud.com/boulderheaduk">DJ/Producer</a>, event manager, <a class="click_a" href="https://mint-tea-records.co.uk">label</a> owner, <a class="click_a" href="https://github.com/HJ959">coder</a> and <a class="click_a" onclick="showAV()">audio visual</a> practitioner specialising in all things <a class="click_a" onclick="showPrints()">vibrant</a> and groovy currently based in Bristol.</h1>
                 </div>
                 <div class='section homeInfo'>
                     <h1>// henryjaames gmail com</h1>
                 </div>
-                <!-- Draggable DIV CATALOGUE -->
                 <div class="section audioVisual">
-                    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
                     <h1>Virtual Boundaries</h1>
-                    <button id="previousButton" onclick="catCyclePrevious()"><</button>
-                    <button id="nextButton" onclick="catCycleNext()" value="0">></button>
+                    <button id="previousButton" onclick="avPrevious()"><</button>
+                    <button id="nextButton" onclick="avNext()" value="0">></button>
+                </div>
+                <div class="prints">
+                    <h1>Prints</h1>
+                    <img id="print1" src="media/bugs.png" alt="digital bugs created from feedback by Henry James">
+                    <img id="print2" src="media/Haze.png" alt="digital Haze created from feedback by Henry James">
+                    <img id="print3" src="media/Moon.png" alt="digital Moon created from feedback by Henry James">
+                    <img id="print4" src="media/Warp.png" alt="digital Warp created from feedback by Henry James">
+                    <img id="print5" src="media/Grid.png" alt="digital Grid created from feedback by Henry James">
+                    <img id="print6" src="media/Stripe.png" alt="digital Stripe created from feedback by Henry James">
+                    <img id="print7" src="media/Parts.png" alt="digital Parts created from feedback by Henry James">
                 </div>
             </div>
         </div>
@@ -98,6 +111,7 @@
       void main() {
           vec2 st = gl_FragCoord.xy/u_resolution.xy;
           st.x *= u_resolution.x/u_resolution.y;
+          vec2 mouse = u_mouse.xy/u_resolution.xy;
           vec3 color = vec3(0.0);
           vec2 pos = vec2(st*3.);
 

@@ -35,6 +35,10 @@ body {
   display: none;
 }
 
+.prints {
+  display: none;
+}
+
 .homeInfo {
   display: block;
 }
@@ -42,5 +46,11 @@ body {
 #background_canvas {
   position: absolute;
   z-index: -2;
+}
+
+img {
+  width: 77%;
+  height: 77%;
+  box-shadow: 0px 0px 6px 6px rgba(255,255,255,1);
 }
 
