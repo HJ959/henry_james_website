@@ -11,38 +11,22 @@ function showAV() {
   var x = document.getElementsByClassName("homeInfo");
   var y = document.getElementsByClassName("audioVisual");
 
-  for (var i = 0; i < x.length; i++)  {
-    if (x[i].style.display === "none") {
-      x[i].style.display = "block";
-      x[i].visibility = "visible";
-    } else {
-      x[i].style.display = "none";
-      x[i].visibility = "hidden";
-    }
-
-  for (var j = 0; j < y.length; j++) {
-    if (x[i].style.display === "block") {
-      y[j].style.display = "none";
-      y[j].visibility = "hidden";
-    } else {
-      y[j].style.display = "block";
-      y[j].visibility = "visible";
-    }
-  }
-  }
+  showHide(x, y);
 }
 //////////////////////////////////////////////////////////////////////////////
 function showPrints() {
   var x = document.getElementsByClassName("homeInfo");
   var y = document.getElementsByClassName("prints");
+  var shadow = document.getElementById("theMainPage");
 
+  showHide(x, y);
+  /*
+  shadow.className =+ "shadowSubtle "; 
   // this will also remove the page shadow from the main container
-  var shadow = document.getElementsByClassName("shadowSubtle");
-
-  for (var i = 0; i < shadow.length; i++)  {
-    console.log(shadow[i].style.boxShadow);
-  }
-
+  shadow.className = shadow.className.replace(/\bshadowSubtle\b/g, "");*/
+}
+//////////////////////////////////////////////////////////////////////////////
+function showHide(x, y) {
   for (var i = 0; i < x.length; i++)  {
     if (x[i].style.display === "none") {
       x[i].style.display = "block";
@@ -64,8 +48,8 @@ function showPrints() {
   }
 }
 //////////////////////////////////////////////////////////////////////////////
-function printsNext() {
-  var elmntNext = document.getElementById("nextButton");
+function nextBtn(btn) {
+  var elmntNext = document.getElementById(btn);
   var buttonValue = elmntNext.value;
 
   buttonValue++
@@ -75,9 +59,9 @@ function printsNext() {
   returnCatInfo(buttonValue);
   elmntNext.value = buttonValue;
 }
-
-function printsPrevious() {
-  var elmntNext = document.getElementById("nextButton");
+//////////////////////////////////////////////////////////////////////////////
+function previousBtn(btn) {
+  var elmntNext = document.getElementById(btn);
   var buttonValue = elmntNext.value;
 
   buttonValue--
@@ -87,10 +71,19 @@ function printsPrevious() {
   returnCatInfo(buttonValue);
   elmntNext.value = buttonValue;
 }
+//////////////////////////////////////////////////////////////////////////////
+function printsNext() {
+  // list location value stored in the next button
+  nextBtn("nextButton");
+}
+
+function printsPrevious() {
+  // list location value stored in the next button
+  previousBtn("nextButton");
+}
 
 // displays the selected div on the catalogue screen
 function returnCatInfo(buttonValue) {
-  console.log(buttonValue);
   var printIDList = ['print1', 'print2', 'print3', 'print4', 'print5', 'print6', 'print7'];
   for (item in printIDList) {
     var itemID = document.getElementById(printIDList[item]);
