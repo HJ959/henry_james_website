@@ -45,8 +45,30 @@
   height: 100%;
 }
 
-#backButton {
-  display: none;
+.isPointer {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+button {
+  position: relative;
+  cursor: pointer;
+  background-color: $mainWhite;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 3em;
+  &:hover {
+    box-shadow: 0px 0px 3px 1px rgba(230,230,230,1);
+    background-color: rgba(230,230,230,1);
+  }
+}
+
+.myButton:hover {
+	background-color:transparent;
 }
 
 $printIDs: print2, print3, print4, print5, print6, print7;

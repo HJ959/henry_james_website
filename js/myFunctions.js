@@ -11,7 +11,7 @@ function showAV() {
   var x = document.getElementsByClassName("homeInfo");
   var y = document.getElementsByClassName("audioVisual");
 
-  showHide(x, y);
+  showHide(x, y, "block");
 }
 //////////////////////////////////////////////////////////////////////////////
 function showPrints() {
@@ -19,7 +19,7 @@ function showPrints() {
   var y = document.getElementsByClassName("prints");
   var shadow = document.getElementById("theMainPage");
 
-  showHide(x, y);
+  showHide(x, y, "inline-block");
   
   if (shadow.className === "page") {
     shadow.className =+ " shadowSubtle"; 
@@ -29,10 +29,10 @@ function showPrints() {
   }
 }
 //////////////////////////////////////////////////////////////////////////////
-function showHide(x, y) {
+function showHide(x, y, blockType) {
   for (var i = 0; i < x.length; i++)  {
     if (x[i].style.display === "none") {
-      x[i].style.display = "block";
+      x[i].style.display = blockType;
       x[i].visibility = "visible";
     } else {
       x[i].style.display = "none";
@@ -40,11 +40,11 @@ function showHide(x, y) {
     }
 
   for (var j = 0; j < y.length; j++) {
-    if (x[i].style.display === "block") {
+    if (x[i].style.display === blockType) {
       y[j].style.display = "none";
       y[j].visibility = "hidden";
     } else {
-      y[j].style.display = "block";
+      y[j].style.display = blockType;
       y[j].visibility = "visible";
     }
   }

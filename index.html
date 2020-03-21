@@ -20,12 +20,12 @@
         <div id="theMainPage" class="page shadowSubtle">
           <div class="pageHeader">
             <div class="headerElmnt">
-              <h1><span class="audioVisual" onclick="showAV()"><</span></h1>
-              <h1><span class="prints" onclick="showPrints()"><</span></h1>
+              <h1 class="isPointer"><span class="audioVisual" onclick="showAV()"><</span></h1>
+              <h1 class="isPointer"><span class="prints" onclick="showPrints()"><</span></h1>
             </div>
             <div class="headerElmnt">
-              <button class="prints" id="previousButton" onclick="printsPrevious()"><</button>
-              <button class="prints" id="nextButton" onclick="printsNext()" value="0">></button>
+              <button class="click_a prints" id="previousButton" onclick="printsPrevious()"><</button>
+              <button class="click_a prints" id="nextButton" onclick="printsNext()" value="0">></button>
             </div>
           </div>
           <div class="pageMain" id="pageBox">
@@ -38,8 +38,8 @@
                 </div>
                 <div class="section audioVisual">
                     <h1>Virtual Boundaries</h1>
-                    <button id="previousButton" onclick="avPrevious()"><</button>
-                    <button id="nextButton" onclick="avNext()" value="0">></button>
+                    <button class="click_a" id="previousButton" onclick="avPrevious()"><</button>
+                    <button class="click_a" id="nextButton" onclick="avNext()" value="0">></button>
                 </div>
                 <div class="prints">
                     <h1>Prints</h1>
