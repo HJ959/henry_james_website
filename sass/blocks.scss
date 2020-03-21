@@ -17,7 +17,8 @@
 
 .headerElmnt {
   z-index: 4;
-  @include absolute-top-left;
+  display: inline-block;
+  padding-right: 33%;
   text-shadow: 3px 3px 2px #000000;
 }
 
@@ -54,13 +55,14 @@ a {
 }
 
 button {
-  position: relative;
   cursor: pointer;
   background-color: $mainWhite;
   padding: 0;
   border: none;
   background: none;
   font-size: 3em;
+  width: 50px;
+  height: 50px;
   &:hover {
     box-shadow: 0px 0px 3px 1px rgba(230,230,230,1);
     background-color: rgba(230,230,230,1);

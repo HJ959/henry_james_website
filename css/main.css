@@ -127,11 +127,9 @@ img {
 
 .headerElmnt {
   z-index: 4;
-  text-shadow: 3px 3px 2px #000000;
-  width: 33%;
-  height: 100%;
   display: inline-block;
-  justify-content: center;
+  padding-right: 33%;
+  text-shadow: 3px 3px 2px #000000;
 }
 
 .section {
@@ -167,13 +165,14 @@ a {
 }
 
 button {
-  position: relative;
   cursor: pointer;
   background-color: "rgba(249,249,249,1)";
   padding: 0;
   border: none;
   background: none;
   font-size: 3em;
+  width: 50px;
+  height: 50px;
 }
 button:hover {
   box-shadow: 0px 0px 3px 1px #e6e6e6;

@@ -19,13 +19,13 @@ function showPrints() {
   var y = document.getElementsByClassName("prints");
   var shadow = document.getElementById("theMainPage");
 
-  showHide(x, y, "inline-block");
+  showHide(x, y, "block");
+  console.log(shadow.className);
   
-  if (shadow.className === "page") {
-    shadow.className =+ " shadowSubtle"; 
-  }
   if (shadow.className === "page shadowSubtle") {
-    shadow.className = shadow.className.replace(/\bshadowSubtle\b/g, "");
+    shadow.className = "page"; 
+  } else {
+    shadow.className = "page shadowSubtle";
   }
 }
 //////////////////////////////////////////////////////////////////////////////
