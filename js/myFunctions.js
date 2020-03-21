@@ -20,10 +20,13 @@ function showPrints() {
   var shadow = document.getElementById("theMainPage");
 
   showHide(x, y);
-  /*
-  shadow.className =+ "shadowSubtle "; 
-  // this will also remove the page shadow from the main container
-  shadow.className = shadow.className.replace(/\bshadowSubtle\b/g, "");*/
+  
+  if (shadow.className === "page") {
+    shadow.className =+ " shadowSubtle"; 
+  }
+  if (shadow.className === "page shadowSubtle") {
+    shadow.className = shadow.className.replace(/\bshadowSubtle\b/g, "");
+  }
 }
 //////////////////////////////////////////////////////////////////////////////
 function showHide(x, y) {
