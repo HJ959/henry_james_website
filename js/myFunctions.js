@@ -109,3 +109,18 @@ function isImgMaxSize(imgID) {
   currentWidth = img.width;
 }
 //////////////////////////////////////////////////////////////////////////////
+
+// When we navigate to a section, we want to update the URL to include a hash value that signifies what section we are on
+// Helpful helpers that you might need are:
+// To set the hash initially, you will need: window.location = "#hash-goes-here"
+// To update the hash, you will need: window.location.hash = "#new-hash"
+
+// #section#two
+
+// When we land on the website, we want to check to see if there is a hash value appended to the URL, and if there is, we want to show the corresponding section.
+// To fetch the hash, you will need window.location, and maybe a split of the string on the hash. i.e. window.location.split('#');
+// split
+// window.location
+// window.location.hash
+
+// var newString = window.location.split('#');

@@ -23,10 +23,6 @@
               <h1 class="isPointer"><span class="audioVisual" onclick="showAV()"><</span></h1>
               <h1 class="isPointer"><span class="prints" onclick="showPrints()"><</span></h1>
             </div>
-            <div class="headerElmnt">
-              <button class="click_a prints" id="previousButton" onclick="printsPrevious()"><</button>
-              <button class="click_a prints" id="nextButton" onclick="printsNext()" value="0">></button>
-            </div>
           </div>
           <div class="pageMain" id="pageBox">
             <div class="homeInfo" id="background_canvas"></div>
@@ -42,14 +38,20 @@
                     <button class="click_a" id="nextButton" onclick="avNext()" value="0">></button>
                 </div>
                 <div class="prints">
-                    <h1>Prints</h1>
-                    <img id="print1" src="media/bugs.png" alt="digital bugs created from feedback by Henry James">
-                    <img id="print2" src="media/Haze.png" alt="digital Haze created from feedback by Henry James">
-                    <img id="print3" src="media/Moon.png" alt="digital Moon created from feedback by Henry James">
-                    <img id="print4" src="media/Warp.png" alt="digital Warp created from feedback by Henry James">
-                    <img id="print5" src="media/Grid.png" alt="digital Grid created from feedback by Henry James">
-                    <img id="print6" src="media/Stripe.png" alt="digital Stripe created from feedback by Henry James">
-                    <img id="print7" src="media/Parts.png" alt="digital Parts created from feedback by Henry James">
+                    <div class="prints-container">
+                        <h1>Prints</h1>
+                        <img id="print1" src="media/bugs.png" alt="digital bugs created from feedback by Henry James">
+                        <img id="print2" src="media/Haze.png" alt="digital Haze created from feedback by Henry James">
+                        <img id="print3" src="media/Moon.png" alt="digital Moon created from feedback by Henry James">
+                        <img id="print4" src="media/Warp.png" alt="digital Warp created from feedback by Henry James">
+                        <img id="print5" src="media/Grid.png" alt="digital Grid created from feedback by Henry James">
+                        <img id="print6" src="media/Stripe.png" alt="digital Stripe created from feedback by Henry James">
+                        <img id="print7" src="media/Parts.png" alt="digital Parts created from feedback by Henry James">
+                    </div>
+                    <div class="headerElmnt headerElmnt--buttons">
+                        <button class="click_a" id="previousButton" onclick="printsPrevious()"><</button>
+                        <button class="click_a" id="nextButton" onclick="printsNext()" value="0">></button>
+                    </div>
                 </div>
             </div>
         </div>

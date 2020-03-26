@@ -8,7 +8,8 @@
 }
 
 .pageHeader {
-  @include absolute-top-left;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   bottom: 90%;
   z-index: 4;
@@ -18,8 +19,11 @@
 .headerElmnt {
   z-index: 4;
   display: inline-block;
-  padding-right: 33%;
   text-shadow: 3px 3px 2px #000000;
+
+  &--buttons {
+    //put our new styles here
+  }
 }
 
 .section {
