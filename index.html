@@ -72,6 +72,8 @@
       precision mediump float;
       #endif
 
+      #define PI 3.14159265359
+
       uniform vec2 u_resolution;
       uniform vec2 u_mouse;
       uniform float u_time;
@@ -114,18 +116,22 @@
           st.x *= u_resolution.x/u_resolution.y;
           vec2 mouse = u_mouse.xy/u_resolution.xy;
           vec3 color = vec3(0.0);
-          vec2 pos = vec2(st*3.);
+          vec2 pos = vec2(st*PI);
 
           float DF = 0.02;
 
           // Add a random position
           float a = 0.0;
-          vec2 vel = vec2(u_time*.001);
+          vec2 vel = vec2(.001);
           DF += snoise(pos+vel)*.25+.25;
 
           // Add a random position
-          a = snoise(pos*vec2(cos(u_time*0.015),cos(u_time*0.001))*0.9)*3.1415;
-          vel = vec2(abs(a),sin(a));
+          a = snoise(pos 
+                     * vec2(cos(0.015),cos(0.001*u_time))
+                     * 0.9) 
+                     * PI;
+
+          vel = vec2(abs(a*sin(u_time*0.01)),sin(a*cos(u_time*0.03)));
           DF += snoise(pos-vel)*.15+.15;
 
           color = vec3( smoothstep(0.5,0.7,sin(DF)),

@@ -83,7 +83,7 @@ function init() {
 
 function onWindowResize( event ) {
     //renderer.setSize( window.innerWidth, window.innerHeight );
-    renderer.setSize( pageBox.offsetWidth, pageBox.offsetHeight );
+    renderer.setSize( pageBox.clientWidth, pageBox.clientHeight );
     uniforms.u_resolution.value.x = renderer.domElement.width;
     uniforms.u_resolution.value.y = renderer.domElement.height;
 }
@@ -94,6 +94,6 @@ function animate() {
 }
 
 function render() {
-    uniforms.u_time.value += 0.05;
+    uniforms.u_time.value += 0.1;
     renderer.render( scene, camera );
 }
