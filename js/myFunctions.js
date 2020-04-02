@@ -1,4 +1,27 @@
 /* JavaScript created by Henry James https://henryjames.space */
+//'use strict';
+//////////////////////////////////////////////////////////////////////////////
+function loadURLHash() {
+  if (window.location !== "") {
+    var hashValue = window.location.hash;
+    var hashValues = hashValue.split("#");
+    
+    var funcNames = {"vibrant": "showPrints",
+                     "audioVisual": "showAV"}
+
+    /*
+    The below seems to be matching the AV? but also showing prints? Hash
+    value seems to be audioVisual after? 
+    */
+
+    for (var func in funcNames) {
+      if (func === hashValues[1]) {
+        console.log(func);
+        window[funcNames[func]]();
+      }
+    }
+  }
+ }
 //////////////////////////////////////////////////////////////////////////////
 function getRandomInt(min, max) {
  min = Math.ceil(min);
@@ -11,7 +34,8 @@ function showAV() {
   var x = document.getElementsByClassName("homeInfo");
   var y = document.getElementsByClassName("audioVisual");
 
-  showHide(x, y, "block");
+  showHide(x, y, "block", "#audioVisual");
+  window.location = "#audioVisual";
 }
 //////////////////////////////////////////////////////////////////////////////
 function showPrints() {
@@ -19,9 +43,8 @@ function showPrints() {
   var y = document.getElementsByClassName("prints");
   var shadow = document.getElementById("theMainPage");
 
-  showHide(x, y, "block");
-  console.log(shadow.className);
-  
+  showHide(x, y, "block", "#vibrant");
+
   if (shadow.className === "page shadowSubtle") {
     shadow.className = "page"; 
   } else {
@@ -29,11 +52,12 @@ function showPrints() {
   }
 }
 //////////////////////////////////////////////////////////////////////////////
-function showHide(x, y, blockType) {
+function showHide(x, y, blockType, hashString) {
   for (var i = 0; i < x.length; i++)  {
     if (x[i].style.display === "none") {
       x[i].style.display = blockType;
       x[i].visibility = "visible";
+      window.location = "";
     } else {
       x[i].style.display = "none";
       x[i].visibility = "hidden";
@@ -46,9 +70,24 @@ function showHide(x, y, blockType) {
     } else {
       y[j].style.display = blockType;
       y[j].visibility = "visible";
+      // update the hash values so that URLs can be shared with viewers
+      window.location = hashString;
     }
   }
   }
+}
+//////////////////////////////////////////////////////////////////////////////
+// displays the selected div on the catalogue screen
+function returnCatInfo(buttonValue) {
+  var printIDList = ['print1', 'print2', 'print3', 'print4', 'print5', 'print6', 'print7'];
+  for (item in printIDList) {
+    var itemID = document.getElementById(printIDList[item]);
+    itemID.style.display = "none";
+  }
+  
+  var catID = document.getElementById(printIDList[buttonValue]);
+  isImgMaxSize(printIDList[buttonValue]);
+  catID.style.display = "inline";
 }
 //////////////////////////////////////////////////////////////////////////////
 function nextBtn(btn) {
@@ -83,19 +122,6 @@ function printsNext() {
 function printsPrevious() {
   // list location value stored in the next button
   previousBtn("nextButton");
-}
-
-// displays the selected div on the catalogue screen
-function returnCatInfo(buttonValue) {
-  var printIDList = ['print1', 'print2', 'print3', 'print4', 'print5', 'print6', 'print7'];
-  for (item in printIDList) {
-    var itemID = document.getElementById(printIDList[item]);
-    itemID.style.display = "none";
-  }
-  
-  var catID = document.getElementById(printIDList[buttonValue]);
-  isImgMaxSize(printIDList[buttonValue]);
-  catID.style.display = "inline";
 }
 //////////////////////////////////////////////////////////////////////////////
 function isImgMaxSize(imgID) {
