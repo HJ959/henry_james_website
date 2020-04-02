@@ -24,19 +24,32 @@
               <h1 class="isPointer"><span class="prints" onclick="showPrints()"><</span></h1>
             </div>
           </div>
-          <div class="pageMain" id="pageBox">
-            <div class="homeInfo" id="background_canvas"></div>
+          <div id="pageBox" class="pageMain"> 
+
+            <!-- HOME INFO SECTION -->
+            <div id="js-home-section" class="is-showing">
+                <div id="js-background_canvas" class="homeInfo"></div> 
                 <div class='section homeInfo'>
                     <h1><a class="click_a" href="https://soundcloud.com/boulderheaduk">DJ/Producer</a>, event manager, <a class="click_a" href="https://mint-tea-records.co.uk">label</a> owner, <a class="click_a" href="https://github.com/HJ959">coder</a> and <a class="click_a" onclick="showAV()">audio visual</a> practitioner specialising in all things <a class="click_a" onclick="showPrints()">vibrant</a> and groovy currently based in Bristol. Part of <a class="click_a" href="https://do-iy.com">Do-IY</a> collective.</h1>
                 </div>
                 <div class='section homeInfo'>
                     <h1>// henryjaames gmail com</h1>
                 </div>
+            </div>
+            <!-- END HOME INFO SECTION -->
+
+            <!-- AUDIO VISUAL SECTION-->
+            <div id="js-audio-visual-section">
                 <div class="section audioVisual">
                     <h1>Virtual Boundaries</h1>
-                    <button class="click_a" id="previousButton" onclick="avPrevious()"><</button>
-                    <button class="click_a" id="nextButton" onclick="avNext()" value="0">></button>
+                    <button id="previousButton" class="click_a" onclick="avPrevious()"><</button>
+                    <button id="nextButton" class="click_a" onclick="avNext()" value="0">></button>
                 </div>
+            </div>
+            <!-- END AUDIO VISUAL SECTION-->
+
+            <!-- PRINTS SECTION -->
+            <div id="js-prints-section">
                 <div class="prints">
                     <div class="prints-container">
                         <img id="print1" src="media/bugs.png" alt="digital bugs created from feedback by Henry James">
@@ -48,10 +61,12 @@
                         <img id="print7" src="media/Parts.png" alt="digital Parts created from feedback by Henry James">
                     </div>
                     <div class="headerElmnt headerElmnt--buttons">
-                        <button class="click_a" id="previousButton" onclick="printsPrevious()"><</button>
-                        <button class="click_a" id="nextButton" onclick="printsNext()" value="0">></button>
+                        <button id="previousButton" class="click_a" onclick="printsPrevious()"><</button>
+                        <button id="nextButton" class="click_a" onclick="printsNext()" value="0">></button>
+                        </div>
                     </div>
                 </div>
+                 <!-- END PRINTS SECTION -->
             </div>
         </div>
     </main>

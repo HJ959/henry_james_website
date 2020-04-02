@@ -31,50 +31,46 @@ function getRandomInt(min, max) {
 }
 //////////////////////////////////////////////////////////////////////////////
 function showAV() {
-  var x = document.getElementsByClassName("homeInfo");
-  var y = document.getElementsByClassName("audioVisual");
+  var home = document.getElementById("js-home-section");
+  var audioVisual = document.getElementById("js-audio-visual-section");
 
-  showHide(x, y, "block", "#audioVisual");
+  showHide(home, audioVisual, "block", "#audioVisual");
   window.location = "#audioVisual";
 }
 //////////////////////////////////////////////////////////////////////////////
 function showPrints() {
-  var x = document.getElementsByClassName("homeInfo");
-  var y = document.getElementsByClassName("prints");
-  var shadow = document.getElementById("theMainPage");
+  var home = document.getElementById("js-home-section");
+  var prints = document.getElementById("js-prints-section");
 
-  showHide(x, y, "block", "#vibrant");
-
-  if (shadow.className === "page shadowSubtle") {
-    shadow.className = "page"; 
-  } else {
-    shadow.className = "page shadowSubtle";
-  }
+  home.classList.toggle('is-showing');
+  prints.classList.toggle('is-showing');
 }
+
+
 //////////////////////////////////////////////////////////////////////////////
 function showHide(x, y, blockType, hashString) {
-  for (var i = 0; i < x.length; i++)  {
-    if (x[i].style.display === "none") {
-      x[i].style.display = blockType;
-      x[i].visibility = "visible";
+
+  if (x.style.display === "none") {
+      x.style.display = blockType;
+      x.visibility = "visible";
       window.location = "";
     } else {
-      x[i].style.display = "none";
-      x[i].visibility = "hidden";
+      x.style.display = "none";
+      x.visibility = "hidden";
     }
 
-  for (var j = 0; j < y.length; j++) {
-    if (x[i].style.display === blockType) {
-      y[j].style.display = "none";
-      y[j].visibility = "hidden";
+    if (x.style.display === blockType) {
+      y.style.display = "none";
+      y.visibility = "hidden";
     } else {
-      y[j].style.display = blockType;
-      y[j].visibility = "visible";
+      y.style.display = blockType;
+      y.visibility = "visible";
       // update the hash values so that URLs can be shared with viewers
       window.location = hashString;
     }
-  }
-  }
+
+
+    // 
 }
 //////////////////////////////////////////////////////////////////////////////
 // displays the selected div on the catalogue screen

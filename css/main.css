@@ -262,4 +262,11 @@ button:hover {
   display: none;
 }
 
+#js-prints-section, #js-audio-visual-section, #js-home-section {
+  display: none;
+}
+#js-prints-section.is-showing, #js-audio-visual-section.is-showing, #js-home-section.is-showing {
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */

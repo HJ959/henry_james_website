@@ -43,7 +43,7 @@ animate();
 
 function init() {
     pageBox = document.getElementById( 'pageBox' );
-    container = document.getElementById( 'background_canvas' );
+    container = document.getElementById( 'js-background_canvas' );
 
     camera = new THREE.Camera();
     camera.position.z = 1;
