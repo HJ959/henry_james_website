@@ -81,7 +81,9 @@ $printIDs: print2, print3, print4, print5, print6, print7;
   display: none;
 
   &.is-showing {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
