@@ -131,13 +131,6 @@ body {
     opacity: 1;
   }
 }
-.audioVisual {
-  display: none;
-}
-
-.prints {
-  display: none;
-}
 .prints img {
   height: auto;
 }
@@ -150,10 +143,6 @@ img {
   box-shadow: 0px 0px 6px 6px white;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.homeInfo {
-  display: block;
 }
 
 #js-background_canvas {

@@ -31,22 +31,39 @@ function getRandomInt(min, max) {
 }
 //////////////////////////////////////////////////////////////////////////////
 function showAV() {
-  var home = document.getElementById("js-home-section");
-  var audioVisual = document.getElementById("js-audio-visual-section");
-
-  showHide(home, audioVisual, "block", "#audioVisual");
   window.location = "#audioVisual";
+  displaySection("js-audio-visual-section");
+}
+//////////////////////////////////////////////////////////////////////////////
+function showHome() {
+  window.location = "";
+  displaySection("js-home-section");
 }
 //////////////////////////////////////////////////////////////////////////////
 function showPrints() {
-  var home = document.getElementById("js-home-section");
-  var prints = document.getElementById("js-prints-section");
-
-  home.classList.toggle('is-showing');
-  prints.classList.toggle('is-showing');
+  window.location = "#vibrant";
+  displaySection("js-prints-section");
 }
 
+// DRY Principle
+// Back Button = Shows Home - Hides Everything Else
+// Visual Button = Shows Visual - Hides Everything Else
+// Prints Button = Shows Prints - Hides Everything Else
 
+// A button that hides all content sections then shows element.
+// 
+function displaySection(elmnt) {
+  elmnt = document.getElementById(elmnt);
+  sections = document.getElementsByClassName('content-section');
+  console.log(sections);
+
+  for (var section; section > sections.length; sections++) {
+     console.log('section', section);
+     
+     sections[section].classList.remove('is-showing');
+  }
+  elmnt.classList.add('is-showing');
+}
 //////////////////////////////////////////////////////////////////////////////
 function showHide(x, y, blockType, hashString) {
 
