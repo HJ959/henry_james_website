@@ -63,7 +63,6 @@ function returnCatInfo(buttonValue) {
   }
   
   var catID = document.getElementById(printIDList[buttonValue]);
-  isImgMaxSize(printIDList[buttonValue]);
   catID.style.display = "inline";
 }
 //////////////////////////////////////////////////////////////////////////////
