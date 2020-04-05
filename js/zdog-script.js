@@ -65,7 +65,7 @@ var synths = {
     }
   });
   
-  synths.play();
+  synths[0].play();
  
 
   var rand = 0;
