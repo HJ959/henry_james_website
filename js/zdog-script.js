@@ -11,7 +11,7 @@ let illo = new Zdog.Illustration({
       isSpinning = false;
     },
   });
-
+  var counter = 0;
   var synths = new Howl({
     src: ['media/Ts_idiot_Collab/synth_4.mp3', 
           'media/Ts_idiot_Collab/synth_3.mp3', 
@@ -32,7 +32,7 @@ let illo = new Zdog.Illustration({
     loop: true,
     volume: 1.0,
     onend: function() {
-      console.log('Finished!');
+      counter = 0;
     }
   });
   
@@ -41,7 +41,7 @@ let illo = new Zdog.Illustration({
 
   var rand = 0;
   let polyOne, polyTwo;
-  var counter = 0;
+  
   var colours = ['#D8F9F7','#D8EBF9','#D8F9E7']
   function animate() {
     // rotate illo each frame
