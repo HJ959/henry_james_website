@@ -121,46 +121,45 @@ function animate() {
 		shape = new Zdog.Shape({
 			addTo: illo,
 			path: [{
-					x: getRandomInt(-70, 70),
-					y: getRandomInt(-70, 70),
-					z: getRandomInt(-70, 70)
+					x: getRandomInt(-120, 120),
+					y: getRandomInt(-120, 120),
+					z: getRandomInt(-120, 120)
 				}, // start
 				{
 					arc: [{
-							x: getRandomInt(-70, 70),
-							y: getRandomInt(-70, 70),
-							z: getRandomInt(-70, 70)
+							x: getRandomInt(-120, 120),
+							y: getRandomInt(-120, 120),
+							z: getRandomInt(-120, 120)
 						}, // corner
 						{
-							x: getRandomInt(-70, 70),
-							y: getRandomInt(-70, 70),
-							z: getRandomInt(-70, 70)
+							x: getRandomInt(-120, 120),
+							y: getRandomInt(-120, 120),
+							z: getRandomInt(-120, 120)
 						}, // end point
 					]
 				}, {
 					arc: [ // start next arc from last end point
 						{
-							x: getRandomInt(-70, 70),
-							y: getRandomInt(-70, 70),
-							z: getRandomInt(-70, 70)
+							x: getRandomInt(-120, 120),
+							y: getRandomInt(-120, 120),
+							z: getRandomInt(-120, 120)
 						}, // corner
 						{
-							x: getRandomInt(-70, 70),
-							y: getRandomInt(-70, 70),
-							z: getRandomInt(-70, 70)
+							x: getRandomInt(-120, 120),
+							y: getRandomInt(-120, 120),
+							z: getRandomInt(-120, 120)
 						}, // end point
 					]
 				},
 			],
 			closed: true_false[getRandomInt(0, 2)],
 			stroke: getRandomInt(0, 4),
-      color: colours[getRandomInt(0, 3)],
-      zoom: 2,
+			color: colours[getRandomInt(0, 3)],
 		});
 	}
 	if (isSpinning) {
 		illo.rotate.y += 0.01;
-  }
+	}
 	illo.updateRenderGraph();
 	// animate next frame   
 	requestAnimationFrame(animate);
