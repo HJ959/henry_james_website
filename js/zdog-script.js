@@ -59,42 +59,42 @@ var synths = {
 var robo_names = ['isambard', 'mean_girls', 'netflic_and_chill', 'personal_pollution', 'pink_jeans'];
 var robos = {
 	isambard: new Howl({
-		src: ['media/Ts_idiot_Collab/synth_1.mp3'],
+		src: ['media/Ts_idiot_Collab/Isambard.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 6)]].play();
+			robos[robo_names[getRandomInt(0, 5)]].play();
 			counter = 0;
 		}
 	}),
 	mean_girls: new Howl({
-		src: ['media/Ts_idiot_Collab/synth_2.mp3'],
+		src: ['media/Ts_idiot_Collab/Mean_girls.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 6)]].play();
+			robos[robo_names[getRandomInt(0, 5)]].play();
 			counter = 0;
 		}
 	}),
 	netflic_and_chill: new Howl({
-		src: ['media/Ts_idiot_Collab/synth_3.mp3'],
+		src: ['media/Ts_idiot_Collab/Netflix_and_chill.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 6)]].play();
+			robos[robo_names[getRandomInt(0, 5)]].play();
 			counter = 0;
 		}
 	}),
 	personal_pollution: new Howl({
-		src: ['media/Ts_idiot_Collab/synth_4.mp3'],
+		src: ['media/Ts_idiot_Collab/Personal_pollution.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 6)]].play();
+			robos[robo_names[getRandomInt(0, 5)]].play();
 			counter = 0;
 		}
 	}),
 	pink_jeans: new Howl({
-		src: ['media/Ts_idiot_Collab/synth_4.mp3'],
+		src: ['media/Ts_idiot_Collab/Pink_jeans.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 6)]].play();
+			robos[robo_names[getRandomInt(0, 5)]].play();
 			counter = 0;
 		}
 	}),
