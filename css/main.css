@@ -251,4 +251,13 @@ button:hover {
   align-items: center;
 }
 
+.top-row {
+  color: #141414;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /*# sourceMappingURL=main.css.map */

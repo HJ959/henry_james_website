@@ -15,6 +15,8 @@ let illo = new Zdog.Illustration({
     },
   });
   var counter = 0;
+
+
   var synths = new Howl({
     src: ['media/Ts_idiot_Collab/synth_4.mp3', 
           'media/Ts_idiot_Collab/synth_3.mp3', 
@@ -27,7 +29,7 @@ let illo = new Zdog.Illustration({
     }
   });
 
-  var robo = new Howl({
+  var robos = new Howl({
     src: ['media/Ts_idiot_Collab/Isambard.mp3', 
           'media/Ts_idiot_Collab/Mean_girls.mp3', 
           'media/Ts_idiot_Collab/Netflic_and_chill.mp3'],
@@ -36,6 +38,11 @@ let illo = new Zdog.Illustration({
     volume: 1.0,
     onend: function() {
       counter = 0;
+      for (var robo in robos) {
+        // skip loop if the property is from prototype
+        if(!robos.hasOwnProperty(robo)) continue;
+        robos[getRandomInt(0,3)].play();
+      }
     }
   });
   

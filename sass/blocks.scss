@@ -83,4 +83,12 @@ $printIDs: print2, print3, print4, print5, print6, print7;
   }
 }
 
+.top-row {
+  color: $mainBlack;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: flex-end;
+}
 
