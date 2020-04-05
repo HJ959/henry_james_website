@@ -16,7 +16,33 @@ let illo = new Zdog.Illustration({
   });
   var counter = 0;
 
-
+var synths = {
+  synth_1: new Howl({
+    src: ['media/Ts_idiot_Collab/synth_1.mp3'],
+    volume: 1.0,
+    onend: function() {
+      synths[getRandomInt(0,5)].play();
+    }}),
+  synth_2: new Howl({
+    src: ['media/Ts_idiot_Collab/synth_2.mp3'],
+    volume: 1.0,
+    onend: function() {
+      synths[getRandomInt(0,5)].play();
+    }}),
+  synth_3: new Howl({
+    src: ['media/Ts_idiot_Collab/synth_3.mp3'],
+    volume: 1.0,
+    onend: function() {
+      synths[getRandomInt(0,5)].play();
+    }}),
+  synth_4: new Howl({
+    src: ['media/Ts_idiot_Collab/synth_4.mp3'],
+    volume: 1.0,
+    onend: function() {
+      synths[getRandomInt(0,5)].play();
+    }}),
+}
+/*
   var synths = new Howl({
     src: ['media/Ts_idiot_Collab/synth_4.mp3', 
           'media/Ts_idiot_Collab/synth_3.mp3', 
@@ -27,7 +53,7 @@ let illo = new Zdog.Illustration({
     onend: function() {
       console.log('Finished!');
     }
-  });
+  });*/
 
   var robos = new Howl({
     src: ['media/Ts_idiot_Collab/Isambard.mp3', 
@@ -38,12 +64,6 @@ let illo = new Zdog.Illustration({
       counter = 0;
     }
   });
-
-  var id1 = robos.play();
-  var id2 = robos.play();
-
-  robos.fade(1, 0, 1000, id1);
-  robos.rate(1.5, id2);
   
   synths.play();
  
