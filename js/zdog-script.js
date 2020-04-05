@@ -36,11 +36,6 @@ let illo = new Zdog.Illustration({
     volume: 1.0,
     onend: function() {
       counter = 0;
-      for (var robo in robos) {
-        // skip loop if the property is from prototype
-        if(!robos.hasOwnProperty(robo)) continue;
-        robos[getRandomInt(0,3)].play();
-      }
     }
   });
 
