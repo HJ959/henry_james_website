@@ -47,7 +47,7 @@ let illo = new Zdog.Illustration({
   });
   
   synths.play();
-  robo.play();
+  robos.play();
 
   var rand = 0;
   let polyOne, polyTwo;
