@@ -121,33 +121,33 @@ function animate() {
 		shape = new Zdog.Shape({
 			addTo: illo,
 			path: [{
-					x: getRandomInt(-200, 200),
-					y: getRandomInt(-200, 200),
-					z: getRandomInt(-200, 200)
+					x: getRandomInt(-179, 179),
+					y: getRandomInt(-179, 179),
+					z: getRandomInt(-179, 179)
 				}, // start
 				{
 					arc: [{
-							x: getRandomInt(-200, 200),
-							y: getRandomInt(-200, 200),
-							z: getRandomInt(-200, 200)
+							x: getRandomInt(-179, 179),
+							y: getRandomInt(-179, 179),
+							z: getRandomInt(-179, 179)
 						}, // corner
 						{
-							x: getRandomInt(-200, 200),
-							y: getRandomInt(-200, 200),
-							z: getRandomInt(-200, 200)
+							x: getRandomInt(-179, 179),
+							y: getRandomInt(-179, 179),
+							z: getRandomInt(-179, 179)
 						}, // end point
 					]
 				}, {
 					arc: [ // start next arc from last end point
 						{
-							x: getRandomInt(-200, 200),
-							y: getRandomInt(-200, 200),
-							z: getRandomInt(-200, 200)
+							x: getRandomInt(-179, 179),
+							y: getRandomInt(-179, 179),
+							z: getRandomInt(-179, 179)
 						}, // corner
 						{
-							x: getRandomInt(-200, 200),
-							y: getRandomInt(-200, 200),
-							z: getRandomInt(-200, 200)
+							x: getRandomInt(-179, 179),
+							y: getRandomInt(-179, 179),
+							z: getRandomInt(-179, 179)
 						}, // end point
 					]
 				},
