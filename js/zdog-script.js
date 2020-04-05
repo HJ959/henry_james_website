@@ -27,7 +27,7 @@ var synth_names = ['synth_1', 'synth_2', 'synth_3', 'synth_4'];
 var synths = {
 	synth_1: new Howl({
 		src: ['media/Ts_idiot_Collab/synth_1.mp3'],
-		volume: 1.0,
+		volume: 0.5,
 		onend: function() {
       synths[synth_names[getRandomInt(0, 4)]].play();
       synths[synth_names[getRandomInt(0, 4)]].play();
@@ -35,7 +35,7 @@ var synths = {
 	}),
 	synth_2: new Howl({
 		src: ['media/Ts_idiot_Collab/synth_2.mp3'],
-		volume: 1.0,
+		volume: 0.5,
 		onend: function() {
       synths[synth_names[getRandomInt(0, 4)]].play();
       synths[synth_names[getRandomInt(0, 4)]].play();
@@ -43,7 +43,7 @@ var synths = {
 	}),
 	synth_3: new Howl({
 		src: ['media/Ts_idiot_Collab/synth_3.mp3'],
-		volume: 1.0,
+		volume: 0.5,
 		onend: function() {
       synths[synth_names[getRandomInt(0, 4)]].play();
       synths[synth_names[getRandomInt(0, 4)]].play();
@@ -51,7 +51,7 @@ var synths = {
 	}),
 	synth_4: new Howl({
 		src: ['media/Ts_idiot_Collab/synth_4.mp3'],
-		volume: 1.0,
+		volume: 0.5,
 		onend: function() {
       synths[synth_names[getRandomInt(0, 4)]].play();
       synths[synth_names[getRandomInt(0, 4)]].play();
