@@ -34,7 +34,6 @@ let illo = new Zdog.Illustration({
           'media/Ts_idiot_Collab/Mean_girls.mp3', 
           'media/Ts_idiot_Collab/Netflic_and_chill.mp3'],
     autoplay: true,
-    loop: true,
     volume: 1.0,
     onend: function() {
       counter = 0;
