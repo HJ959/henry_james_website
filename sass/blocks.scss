@@ -44,7 +44,7 @@
   height: 100%;
 }
 
-.isPointer {
+.is-pointer {
   cursor: pointer;
 }
 
@@ -76,7 +76,6 @@ $printIDs: print2, print3, print4, print5, print6, print7;
 
 #js-prints-section, #js-audio-visual-section, #js-home-section {
   display: none;
-
   &.is-showing {
     display: flex;
     flex-direction: column;

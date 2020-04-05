@@ -144,6 +144,11 @@ img {
   box-shadow: 0px 0px 10px 2px #00b4b4;
 }
 
+.zdog-svg {
+  height: 100%;
+  width: 100%;
+}
+
 .click_a {
   transition: color 0.7s ease;
   color: #fba7ff;
@@ -190,7 +195,7 @@ img {
   height: 100%;
 }
 
-.isPointer {
+.is-pointer {
   cursor: pointer;
 }
 
