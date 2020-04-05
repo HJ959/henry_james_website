@@ -21,6 +21,9 @@
 .headerElmnt {
   z-index: 4;
   text-shadow: 3px 3px 2px $mainWhite;
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
 
 .section {

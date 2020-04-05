@@ -4,10 +4,6 @@
     font-size: calc(1em + 4vw);
   }
 
-  .headerElmnt {
-    font-size: 0.5em;
-  }
-
   .page {
     height: 650px;
     margin-left: 1%;
@@ -172,6 +168,9 @@ img {
 .headerElmnt {
   z-index: 4;
   text-shadow: 3px 3px 2px #f9f9f9;
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
 
 .section {
