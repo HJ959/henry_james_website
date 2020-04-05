@@ -12,19 +12,32 @@ let illo = new Zdog.Illustration({
     },
   });
 
-  var sound = new Howl({
+  var synths = new Howl({
     src: ['media/Ts_idiot_Collab/synth_4.mp3', 
           'media/Ts_idiot_Collab/synth_3.mp3', 
           'media/Ts_idiot_Collab/synth_2.mp3'],
     autoplay: true,
     loop: true,
-    volume: 0.5,
+    volume: 1.0,
+    onend: function() {
+      console.log('Finished!');
+    }
+  });
+
+  var robo = new Howl({
+    src: ['media/Ts_idiot_Collab/Isambard.mp3', 
+          'media/Ts_idiot_Collab/Mean_girls.mp3', 
+          'media/Ts_idiot_Collab/Netflic_and_chill.mp3'],
+    autoplay: true,
+    loop: true,
+    volume: 1.0,
     onend: function() {
       console.log('Finished!');
     }
   });
   
-  sound.play();
+  synths.play();
+  robo.play();
 
   var rand = 0;
   let polyOne, polyTwo;
