@@ -30,7 +30,7 @@ var synths = {
 		volume: 0.5,
 		onend: function() {
       synths[synth_names[getRandomInt(0, 4)]].play();
-      synths[synth_names[getRandomInt(0, 4)]].play();
+
 		}
 	}),
 	synth_2: new Howl({
@@ -46,7 +46,7 @@ var synths = {
 		volume: 0.5,
 		onend: function() {
       synths[synth_names[getRandomInt(0, 4)]].play();
-      synths[synth_names[getRandomInt(0, 4)]].play();
+
 		}
 	}),
 	synth_4: new Howl({
