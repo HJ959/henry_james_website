@@ -13,9 +13,9 @@ let illo = new Zdog.Illustration({
   });
 
   var sound = new Howl({
-    src: ['media/Tom_Stokely_Collab/synth_4.mp3', 
-          'media/Tom_Stokely_Collab/synth_3.mp3', 
-          'media/Tom_Stokely_Collab/synth_2.mp3'],
+    src: ['media/Ts_idiot_Collab/synth_4.mp3', 
+          'media/Ts_idiot_Collab/synth_3.mp3', 
+          'media/Ts_idiot_Collab/synth_2.mp3'],
     autoplay: true,
     loop: true,
     volume: 0.5,
