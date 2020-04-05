@@ -7,8 +7,11 @@ let illo = new Zdog.Illustration({
     element: '.zdog-svg',
     // enable rotating scene with dragging
     dragRotate: true,
-    onDragStart: function() {
+    onDragMove: function() {
       isSpinning = false;
+    },
+    onDragEnd: function() {
+      isSpinning = true;
     },
   });
   var counter = 0;
@@ -42,12 +45,13 @@ let illo = new Zdog.Illustration({
   var rand = 0;
   let polyOne, polyTwo;
   
-  var colours = ['#D8F9F7','#D8EBF9','#D8F9E7']
+  var colours = ['#D8F9F7','#D8EBF9','#D8F9E7'];
+  var true_false = [true, false];
   function animate() {
     // rotate illo each frame
       // add circle
       
-      if (counter < 17) {
+      if (counter < 5) {
         counter += 1;
     polyOne = new Zdog.Shape({
       addTo: illo,
@@ -62,9 +66,9 @@ let illo = new Zdog.Illustration({
           { x: getRandomInt(-120,120), y: getRandomInt(-120,120), z: getRandomInt(-120,120) }, // end point
         ]},
       ],
-      closed: true,
+      closed: true_false[getRandomInt(0,2)],
       stroke: getRandomInt(0,4),
-      color: colours[getRandomInt(0,2)],
+      color: colours[getRandomInt(0,3)],
     });
   } 
 
