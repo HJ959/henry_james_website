@@ -154,12 +154,13 @@ function animate() {
 			],
 			closed: true_false[getRandomInt(0, 2)],
 			stroke: getRandomInt(0, 4),
-			color: colours[getRandomInt(0, 3)],
+      color: colours[getRandomInt(0, 3)],
+      zoom: 1.5,
 		});
 	}
 	if (isSpinning) {
 		illo.rotate.y += 0.01;
-	}
+  }
 	illo.updateRenderGraph();
 	// animate next frame   
 	requestAnimationFrame(animate);
