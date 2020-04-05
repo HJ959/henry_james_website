@@ -5,23 +5,7 @@ Poems by T.S. Idiot
 Visuals and website made by Henry James 
 */
 
-// rotating flag variable
-let isSpinning = true;
-// create illo
-let illo = new Zdog.Illustration({
-	// set canvas with selector
-	element: '.zdog-svg',
-	// enable rotating scene with dragging
-	dragRotate: true,
-	onDragMove: function() {
-		isSpinning = false;
-	},
-	onDragEnd: function() {
-		isSpinning = true;
-	},
-});
-
-
+// howler section
 var counter = 0;
 var synth_names = ['synth_1', 'synth_2', 'synth_3', 'synth_4'];
 var synths = {
@@ -107,6 +91,23 @@ var robos = {
 synths.synth_1.play();
 robos.isambard.play();
 
+// zdog section
+// rotating flag variable
+let isSpinning = true;
+// create illo
+let illo = new Zdog.Illustration({
+	// set canvas with selector
+	element: '.zdog-svg',
+	// enable rotating scene with dragging
+	dragRotate: true,
+	onDragMove: function() {
+		isSpinning = false;
+	},
+	onDragEnd: function() {
+		isSpinning = true;
+	},
+});
+
 var rand = 0;
 let shape;
 var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
@@ -120,33 +121,33 @@ function animate() {
 		shape = new Zdog.Shape({
 			addTo: illo,
 			path: [{
-					x: getRandomInt(-120, 120),
-					y: getRandomInt(-120, 120),
-					z: getRandomInt(-120, 120)
+					x: getRandomInt(-200, 200),
+					y: getRandomInt(-200, 200),
+					z: getRandomInt(-200, 200)
 				}, // start
 				{
 					arc: [{
-							x: getRandomInt(-120, 120),
-							y: getRandomInt(-120, 120),
-							z: getRandomInt(-120, 120)
+							x: getRandomInt(-200, 200),
+							y: getRandomInt(-200, 200),
+							z: getRandomInt(-200, 200)
 						}, // corner
 						{
-							x: getRandomInt(-120, 120),
-							y: getRandomInt(-120, 120),
-							z: getRandomInt(-120, 120)
+							x: getRandomInt(-200, 200),
+							y: getRandomInt(-200, 200),
+							z: getRandomInt(-200, 200)
 						}, // end point
 					]
 				}, {
 					arc: [ // start next arc from last end point
 						{
-							x: getRandomInt(-120, 120),
-							y: getRandomInt(-120, 120),
-							z: getRandomInt(-120, 120)
+							x: getRandomInt(-200, 200),
+							y: getRandomInt(-200, 200),
+							z: getRandomInt(-200, 200)
 						}, // corner
 						{
-							x: getRandomInt(-120, 120),
-							y: getRandomInt(-120, 120),
-							z: getRandomInt(-120, 120)
+							x: getRandomInt(-200, 200),
+							y: getRandomInt(-200, 200),
+							z: getRandomInt(-200, 200)
 						}, // end point
 					]
 				},
