@@ -16,30 +16,31 @@ let illo = new Zdog.Illustration({
   });
   var counter = 0;
 
+var synth_names = ['synth_1', 'synth_2', 'synth_3', 'synth_4'];
 var synths = {
   synth_1: new Howl({
     src: ['media/Ts_idiot_Collab/synth_1.mp3'],
     volume: 1.0,
     onend: function() {
-      synths[getRandomInt(0,5)].play();
+      synths[synth_names[getRandomInt(0,5)]].play();
     }}),
   synth_2: new Howl({
     src: ['media/Ts_idiot_Collab/synth_2.mp3'],
     volume: 1.0,
     onend: function() {
-      synths[getRandomInt(0,5)].play();
+      synths[synth_names[getRandomInt(0,5)]].play();
     }}),
   synth_3: new Howl({
     src: ['media/Ts_idiot_Collab/synth_3.mp3'],
     volume: 1.0,
     onend: function() {
-      synths[getRandomInt(0,5)].play();
+      synths[synth_names[getRandomInt(0,5)]].play();
     }}),
   synth_4: new Howl({
     src: ['media/Ts_idiot_Collab/synth_4.mp3'],
     volume: 1.0,
     onend: function() {
-      synths[getRandomInt(0,5)].play();
+      synths[synth_names[getRandomInt(0,5)]].play();
     }}),
 }
 /*
