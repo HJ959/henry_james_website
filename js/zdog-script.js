@@ -29,32 +29,32 @@ var synths = {
 		src: ['media/Ts_idiot_Collab/synth_1.mp3'],
 		volume: 1.0,
 		onend: function() {
-      synths[synth_names[getRandomInt(0, 5)]].play();
-      synths[synth_names[getRandomInt(0, 5)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
 		}
 	}),
 	synth_2: new Howl({
 		src: ['media/Ts_idiot_Collab/synth_2.mp3'],
 		volume: 1.0,
 		onend: function() {
-      synths[synth_names[getRandomInt(0, 5)]].play();
-      synths[synth_names[getRandomInt(0, 5)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
 		}
 	}),
 	synth_3: new Howl({
 		src: ['media/Ts_idiot_Collab/synth_3.mp3'],
 		volume: 1.0,
 		onend: function() {
-      synths[synth_names[getRandomInt(0, 5)]].play();
-      synths[synth_names[getRandomInt(0, 5)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
 		}
 	}),
 	synth_4: new Howl({
 		src: ['media/Ts_idiot_Collab/synth_4.mp3'],
 		volume: 1.0,
 		onend: function() {
-      synths[synth_names[getRandomInt(0, 5)]].play();
-      synths[synth_names[getRandomInt(0, 5)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
+      synths[synth_names[getRandomInt(0, 4)]].play();
 		}
 	}),
 }
@@ -109,7 +109,7 @@ robos.isambard.play();
 
 var rand = 0;
 let shape;
-var colours = ['#D8F9F7', '#D8EBF9', '#D8F9E7'];
+var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
 var true_false = [true, false];
 
 function animate() {
