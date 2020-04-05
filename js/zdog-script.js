@@ -155,7 +155,7 @@ function animate() {
 			closed: true_false[getRandomInt(0, 2)],
 			stroke: getRandomInt(0, 4),
       color: colours[getRandomInt(0, 3)],
-      zoom: 1.5,
+      zoom: 2,
 		});
 	}
 	if (isSpinning) {
