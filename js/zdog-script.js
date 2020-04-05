@@ -33,7 +33,6 @@ let illo = new Zdog.Illustration({
     src: ['media/Ts_idiot_Collab/Isambard.mp3', 
           'media/Ts_idiot_Collab/Mean_girls.mp3', 
           'media/Ts_idiot_Collab/Netflic_and_chill.mp3'],
-    autoplay: true,
     volume: 1.0,
     onend: function() {
       counter = 0;
@@ -44,9 +43,15 @@ let illo = new Zdog.Illustration({
       }
     }
   });
+
+  var id1 = robos.play();
+  var id2 = robos.play();
+
+  robos.fade(1, 0, 1000, id1);
+  robos.rate(1.5, id2);
   
   synths.play();
-  robos.play();
+ 
 
   var rand = 0;
   let polyOne, polyTwo;
