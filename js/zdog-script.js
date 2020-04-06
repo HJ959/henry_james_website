@@ -44,13 +44,13 @@ var synths = {
 }
 
 
-var robo_names = ['isambard', 'mean_girls', 'netflic_and_chill', 'personal_pollution', 'pink_jeans'];
+var robo_names = ['isambard', 'mean_girls', 'netflic_and_chill', 'personal_pollution', 'pink_jeans', 'not_much_fun'];
 var robos = {
 	isambard: new Howl({
 		src: ['media/Ts_idiot_Collab/Isambard.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 5)]].play();
+			robos[robo_names[getRandomInt(0, 6)]].play();
 			counter = 0;
 		}
 	}),
@@ -58,7 +58,7 @@ var robos = {
 		src: ['media/Ts_idiot_Collab/Mean_girls.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 5)]].play();
+			robos[robo_names[getRandomInt(0, 6)]].play();
 			counter = 0;
 		}
 	}),
@@ -66,7 +66,7 @@ var robos = {
 		src: ['media/Ts_idiot_Collab/Netflix_and_chill.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 5)]].play();
+			robos[robo_names[getRandomInt(0, 6)]].play();
 			counter = 0;
 		}
 	}),
@@ -74,7 +74,7 @@ var robos = {
 		src: ['media/Ts_idiot_Collab/Personal_pollution.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 5)]].play();
+			robos[robo_names[getRandomInt(0, 6)]].play();
 			counter = 0;
 		}
 	}),
@@ -82,7 +82,15 @@ var robos = {
 		src: ['media/Ts_idiot_Collab/Pink_jeans.mp3'],
 		volume: 1.0,
 		onend: function() {
-			robos[robo_names[getRandomInt(0, 5)]].play();
+			robos[robo_names[getRandomInt(0, 6)]].play();
+			counter = 0;
+		}
+	}),
+	not_much_fun: new Howl({
+		src: ['media/Ts_idiot_Collab/Not_much_fun.mp3'],
+		volume: 1.0,
+		onend: function() {
+			robos[robo_names[getRandomInt(0, 6)]].play();
 			counter = 0;
 		}
 	}),
@@ -152,6 +160,7 @@ function animate() {
 					]
 				},
 			],
+			fill: true_false[getRandomInt(0,2)],
 			closed: true_false[getRandomInt(0, 2)],
 			stroke: getRandomInt(0, 4),
 			color: colours[getRandomInt(0, 3)],
