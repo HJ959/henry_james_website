@@ -97,7 +97,7 @@ var robos = {
 }
 
 synths.synth_1.play();
-robos.isambard.play();
+robos[robo_names[getRandomInt(0, 6)]].play();
 
 // zdog section
 // rotating flag variable
