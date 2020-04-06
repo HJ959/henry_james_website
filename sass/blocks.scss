@@ -8,14 +8,13 @@
 }
 
 .pageHeader {
-  margin-bottom: 5%;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
   height: 10%;
   z-index: 4;
-  box-shadow: 0px 4px 3px -1px rgba(230, 230, 230, 0.4);
 }
 
 .headerElmnt {
@@ -84,6 +83,10 @@ $printIDs: print2, print3, print4, print5, print6, print7;
     flex-direction: column;
     align-items: center;
   }
+}
+
+.prints-container {
+  height: 400px;
 }
 
 .top-row {
