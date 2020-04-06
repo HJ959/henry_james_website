@@ -121,6 +121,7 @@ let shape;
 var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
 var true_false = [true, false];
 var mostly_false = [false, false, false, false, false, false, true];
+var spin_speed = 0.1;
 
 function animate() {
 	// rotate illo each frame
@@ -168,7 +169,11 @@ function animate() {
 		});
 	}
 	if (isSpinning) {
-		illo.rotate.y += 0.01;
+		if (counter < 2) {
+			spin_speed = Number('0.0' + String(getRandomInt(1,10)));
+		}
+
+		illo.rotate.y += spin_speed;
 	}
 	illo.updateRenderGraph();
 	// animate next frame   
