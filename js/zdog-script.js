@@ -120,6 +120,7 @@ var rand = 0;
 let shape;
 var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
 var true_false = [true, false];
+var mostly_false = [false, false, false, false, false, false, true];
 
 function animate() {
 	// rotate illo each frame
@@ -160,7 +161,7 @@ function animate() {
 					]
 				},
 			],
-			fill: true_false[getRandomInt(0,2)],
+			fill: mostly_false[getRandomInt(0,7)],
 			closed: true_false[getRandomInt(0, 2)],
 			stroke: getRandomInt(0, 4),
 			color: colours[getRandomInt(0, 3)],
