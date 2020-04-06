@@ -125,7 +125,7 @@ var mostly_false = [false, false, false, false, false, false, true];
 function animate() {
 	// rotate illo each frame
 	// add circle
-	if (counter < 5) {
+	if (counter < 3) {
 		counter += 1;
 		shape = new Zdog.Shape({
 			addTo: illo,

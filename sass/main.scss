@@ -1,7 +1,11 @@
 //////////////////////////////////////////////////////////////////////////////
 // declare global variables
 $mainWhite: rgba(249,249,249,1);
+$subWhite: rgba(242,242,242,1);
+$mainPink: #FF9393;
+$mainBlue: #93FFFF;
 $mainBlack: rgba(20,20,20,1);
+$subBlack: rgba(100,100,100,0.2);
 $mainFont: 'ZCOOL QingKe HuangYou', 'cursive';
 //////////////////////////////////////////////////////////////////////////////
 @mixin center-children {
