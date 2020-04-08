@@ -166,6 +166,7 @@ function animate() {
 			closed: true_false[getRandomInt(0, 2)],
 			stroke: getRandomInt(0, 4),
 			color: colours[getRandomInt(0, 3)],
+			backface: colours[getRandomInt(0, 3)],
 		});
 	}
 	if (isSpinning) {
