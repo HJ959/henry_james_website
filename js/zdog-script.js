@@ -170,7 +170,7 @@ function animate() {
 	}
 	if (isSpinning) {
 		if (counter < 2) {
-			spin_speed = Number('0.0' + String(getRandomInt(1,10)));
+			spin_speed = Number('0.0' + String(getRandomInt(1,5)));
 		}
 
 		illo.rotate.y += spin_speed;
