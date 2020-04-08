@@ -110,4 +110,8 @@ $printIDs: print2, print3, print4, print5, print6, print7;
 
 canvas {
   border-radius: 32px;
+  box-shadow: 0px 0px 5px 2px $subBlack;
+  &:hover {
+    box-shadow: 0px 0px 5px 2px $mainBlue;
+  }
 }
