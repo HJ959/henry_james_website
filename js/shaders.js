@@ -42,7 +42,7 @@ init();
 animate();
 
 function init() {
-    pageBox = document.getElementById( 'theMainPage' );
+    pageBox = document.getElementById( 'pageBox' );
     container = document.getElementById( 'pageBox' );
 
     camera = new THREE.Camera();
