@@ -1,0 +1,27 @@
+{
+  "name": "henryjames_website",
+  "version": "1.0.0",
+  "description": "Portfolio website for Henry James",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HJ959/henry_james_website.git"
+  },
+  "author": "Henry James",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HJ959/henry_james_website/issues"
+  },
+  "homepage": "https://github.com/HJ959/henry_james_website#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2"
+  }
+}
