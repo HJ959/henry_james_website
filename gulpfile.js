@@ -4,6 +4,8 @@ const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const plumber = require('gulp-plumber');
 
+// add babel sorts out your new js code to work with old code
+
 gulp.task('styles', () => {
     return gulp.src('sass/main.scss')
         .pipe(plumber())
