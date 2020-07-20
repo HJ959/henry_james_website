@@ -28,8 +28,8 @@
 .section {
   transition: box-shadow 0.1s ease-in-out;
   justify-content: center;
-  margin-left: 2%;
-  margin-bottom: 1%;
+  margin-left: 5%;
+  padding-left: 5%;
   text-align: left;
   z-index: 4;
   border-radius: 32px;
@@ -88,7 +88,7 @@ $printIDs: print2, print3, print4, print5, print6, print7;
 
 #pageBox {
   width: 10vw;
-  height: 80%;
+  height: 98%;
   padding-right: 40px;
 }
 
