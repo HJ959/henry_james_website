@@ -8,7 +8,7 @@ let illo = new Zdog.Illustration({
 
 // Set up a font to use
 let myFont = new Zdog.Font({
-  src: 'media/font/Staatliches-Regular.ttf'
+  src: './media/font/Staatliches-Regular.ttf'
 });
 
 // Create a text object
