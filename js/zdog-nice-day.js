@@ -10,7 +10,8 @@ let illo = new Zdog.Illustration({
 		isSpinning = false;
 	},
 	onDragEnd: function() {
-		isSpinning = true;
+        isSpinning = true;
+    },
 });
 
 // Set up a font to use
