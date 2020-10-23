@@ -24,7 +24,5 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2"
   },
-  "dependencies": {
-    "zfont": "^1.2.7"
-  }
+  "dependencies": {}
 }
