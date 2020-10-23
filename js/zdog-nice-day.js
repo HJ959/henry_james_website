@@ -23,7 +23,7 @@ var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
 var sentences = ["It's gonna be okay.", "Chin up m8", "Deep breathes",
                  "Just relax.", "There's always a last time.", "There's always a first time.",
                  "Think of all the things you're grateful for."];
-var max_sentences = length(sentences);
+var max_sentences = sentences.length;
 
 // Create a text object
 // This is just a Zdog.Shape object with a couple of extra parameters!
