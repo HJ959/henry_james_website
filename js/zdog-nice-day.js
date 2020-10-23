@@ -20,9 +20,9 @@ let myFont = new Zdog.Font({
 });
 
 var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
-var sentences = ["It's gonna be okay.", "Chin up m8", "Deep breathes",
-                 "Just relax.", "There's always a last time.", "There's always a first time.",
-                 "Think of all the things you're grateful for."];
+var sentences = ["It's gonna\nbe okay.", "Chin up m8", "Deep breathes",
+                 "Just relax.", "There's always\na last time.", "There's always\na first time.",
+                 "Think of all the\nthings you're\ngrateful for."];
 var max_sentences = sentences.length;
 
 // Create a text object
@@ -31,7 +31,7 @@ new Zdog.Text({
   addTo: illo,
   font: myFont,
   value: sentences[getRandomInt(0, max_sentences)],
-  fontSize: 64,
+  fontSize: 32,
   color: colours[getRandomInt(0, 2)]
 });
 
