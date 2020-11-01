@@ -127,9 +127,26 @@ for(var x = 0; x < size2; x += step2) {
     draw2(x, y, step2, step2); 
   }
 }
+var leftRightFlag = true;
+var counterLeftRight = 1;
 // Animation loop
+
 function animate() {
+  if (leftRightFlag === true) {
+    illo.rotate.y += 0.01;
+  }  
+  if (leftRightFlag === false) {
+    illo.rotate.y -= 0.01;
+  }
   illo.updateRenderGraph();
+  counterLeftRight++;
+
+  if (counterLeftRight > 48) {
+    leftRightFlag = !leftRightFlag;
+    counterLeftRight = 0;
+  }
+
+
   requestAnimationFrame(animate);
 }
 animate();
