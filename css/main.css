@@ -29,12 +29,16 @@ html {
   height: 100%; }
 
 body {
+  -webkit-box-shadow: 0px 0px 0px 1px #93ffff;
+          box-shadow: 0px 0px 0px 1px #93ffff;
   background-color: #141414;
   color: #f9f9f9;
   font-family: "ZCOOL QingKe HuangYou", "cursive";
   min-height: 100%; }
 
 .page {
+  -webkit-box-shadow: 0px 0px 0px 1px #93ffff;
+          box-shadow: 0px 0px 0px 1px #93ffff;
   background-color: #141414;
   position: relative;
   z-index: 3;
