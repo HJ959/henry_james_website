@@ -1,3 +1,18 @@
+// howler section
+var counter = 0;
+var synth_names = ['Boulderhead - The Space Inbetween_320kbps.mp3'];
+var synths = {
+	synth_1: new Howl({
+		src: ['media/itsgonnabeokay/Boulderhead - The Space Inbetween_320kbps.mp3'],
+		volume: 0.5,
+		onend: function() {
+      synths.synth_1.play();
+		}
+	})
+}
+
+synths.synth_1.play();
+
 // Initialize Zfont
 Zfont.init(Zdog);
 
@@ -48,7 +63,7 @@ new Zdog.Rect({
   fill: false,
 });
 
-function draw(input_x, input_y, width, height) {
+function draw(input_x, input_y, width, height, translateGen) {
   var leftToRight = Math.random() >= 0.5;
   
   if(leftToRight) {
@@ -58,7 +73,7 @@ function draw(input_x, input_y, width, height) {
         { x: input_x, y: input_y, z: getRandomInt(-2,2) }, 
         { x:  input_x + width, y: input_y + height, z: getRandomInt(-1,2) }, 
       ],
-      translate: { y: 10, z: -10},
+      translate: translateGen,
       closed: false,
       stroke: getRandomInt(3,5),
       color: colours[getRandomInt(0,max_colours)],
@@ -68,9 +83,9 @@ function draw(input_x, input_y, width, height) {
       addTo: illo,
       path: [
         { x: input_x + width, y: input_y}, 
-        { x:  input_x, y: input_y + height, z: getRandomInt(-1,1) }, 
+        { x:  input_x, y: input_y + height, z: getRandomInt(-1,2) }, 
       ],
-      translate: { y: 10, z: -10},
+      translate: translateGen,
       closed: false,
       stroke: getRandomInt(3,5),
       color: colours[getRandomInt(0,max_colours)],
@@ -78,7 +93,7 @@ function draw(input_x, input_y, width, height) {
   }
 };
 
-function draw2(input_x, input_y, width, height) {
+function draw2(input_x, input_y, width, height, translateGen) {
   var leftToRight = Math.random() >= 0.5;
   
   if(leftToRight) {
@@ -86,7 +101,7 @@ function draw2(input_x, input_y, width, height) {
       addTo: illo,
       path: [
         { x: input_x, y: input_y, z: getRandomInt(-2,2) }, 
-        { x:  input_x + width, y: input_y + height, z: getRandomInt(-1,2) }, 
+        { x:  input_x + width, y: input_y + height, z: getRandomInt(-2,2) }, 
       ],
       translate: { y: -70, x: -100, z: -70},
       closed: true,
@@ -97,8 +112,8 @@ function draw2(input_x, input_y, width, height) {
     new Zdog.Shape({
       addTo: illo,
       path: [
-        { x: input_x + width, y: input_y}, 
-        { x:  input_x, y: input_y + height, z: getRandomInt(-1,1) }, 
+        { x: input_x + width, y: input_y, z: getRandomInt(-2,2)}, 
+        { x:  input_x, y: input_y + height, z: getRandomInt(-2,2) }, 
       ],
       translate: { y: -70, x: -100, z: -70},
       closed: true,
@@ -115,16 +130,18 @@ var size = getRandomInt(50,100);
 var step = Math.round(size / 5);
 var size2 = getRandomInt(50,100);
 var step2 = Math.round(size / 5);
-var dpr = window.devicePixelRatio;
+
+var translateGen1 = { y: getRandomInt(10,20), z: -getRandomInt(10,30)};
+var translateGen2 = { y: -getRandomInt(50,80), x: -getRandomInt(100,120), z: -getRandomInt(50,80)};
 
 for(var x = 0; x < size; x += step) {
   for(var y = 0; y < size; y+= step) {
-    draw(x, y, step, step); 
+    draw(x, y, step, step, translateGen1); 
   }
 }
 for(var x = 0; x < size2; x += step2) {
   for(var y = 0; y < size2; y+= step2) {
-    draw2(x, y, step2, step2); 
+    draw2(x, y, step2, step2, translateGen2); 
   }
 }
 var leftRightFlag = true;
@@ -134,14 +151,16 @@ var counterLeftRight = 1;
 function animate() {
   if (leftRightFlag === true) {
     illo.rotate.y += 0.01;
+    illo.rotate.z += 0.03;
   }  
   if (leftRightFlag === false) {
     illo.rotate.y -= 0.01;
+    illo.rotate.x += 0.02;
   }
   illo.updateRenderGraph();
   counterLeftRight++;
 
-  if (counterLeftRight > 48) {
+  if (counterLeftRight > getRandomInt(48, 500)) {
     leftRightFlag = !leftRightFlag;
     counterLeftRight = 0;
   }
