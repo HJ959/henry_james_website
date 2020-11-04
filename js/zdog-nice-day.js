@@ -123,7 +123,7 @@ function draw2(input_x, input_y, width, height, translateGen) {
   }
 };
 
-var svg_canvas   = document.getElementById("itsgonnabeokay-svg"); // or other selector like querySelector()
+var svg_canvas = document.getElementById("itsgonnabeokay-canvas"); // or other selector like querySelector()
 var rect = svg_canvas.getBoundingClientRect(); // get the bounding rectangle
 
 var size = getRandomInt(50,100);
@@ -148,24 +148,38 @@ var leftRightFlag = true;
 var counterLeftRight = 1;
 // Animation loop
 
+var boolMouseOver = false;
+var timer;
+var stoppedElement=document.getElementById("itsgonnabeokay-canvas");
+
+function mouseStopped() { 
+   boolMouseOver = false;
+}
+
+window.addEventListener("mousemove",function(){
+    boolMouseOver = true;
+    clearTimeout(timer);
+    timer=setTimeout(mouseStopped,100);
+});
+
 function animate() {
-  if (leftRightFlag === true) {
-    illo.rotate.y += 0.01;
-    illo.rotate.z += 0.03;
-  }  
-  if (leftRightFlag === false) {
-    illo.rotate.y -= 0.01;
-    illo.rotate.x += 0.02;
+  if (boolMouseOver === true) {
+    if (leftRightFlag === true) {
+     illo.rotate.y += 0.7;
+     illo.rotate.z += 0.03;
+    }  
+   if (leftRightFlag === false) {
+     illo.rotate.y -= 0.6;
+     illo.rotate.x += 0.02;
+   }
+   illo.updateRenderGraph();
+    counterLeftRight++;
+
+    if (counterLeftRight > getRandomInt(1, 5)) {
+     leftRightFlag = !leftRightFlag;
+     counterLeftRight = 0;
+    }
   }
-  illo.updateRenderGraph();
-  counterLeftRight++;
-
-  if (counterLeftRight > getRandomInt(48, 500)) {
-    leftRightFlag = !leftRightFlag;
-    counterLeftRight = 0;
-  }
-
-
   requestAnimationFrame(animate);
 }
 animate();
