@@ -96,8 +96,9 @@ img {
   color: #93FFFF;
   text-decoration: none; }
 
-.click_a:hover {
-  color: #FF9393; }
+@media (hover: hover) and (pointer: fine) {
+  .click_a:hover {
+    color: #FF9393; } }
 
 .pageHeader {
   margin-bottom: 5px;
