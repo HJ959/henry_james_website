@@ -2,11 +2,11 @@
   transition: color 0.7s ease;
   color: $mainBlue;
   text-decoration: none;
-  @media(hover: hover) and (pointer: fine) {
+
     &:hover {
       color: $mainPink;
     }
-  }
+  
 }
 
 
