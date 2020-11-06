@@ -13,8 +13,25 @@ var synths = {
 
 synths.synth_1.play();
 
+
+
 // Initialize Zfont
 Zfont.init(Zdog);
+
+// Set up a font to use
+let myFont = new Zdog.Font({
+  src: './media/font/Staatliches-Regular.ttf'
+});
+
+var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
+var sentences = ["It's gonna\nbe okay.", "Chin up m8", "Deep breathes",
+"Just relax.", "There's always\na last time.", "There's always\na first time.",
+"Think of all the\nthings you're\ngrateful for.", "It could \nbe worse!",
+"What \nnext?", "We are a \nsocial species"];
+var max_sentences = sentences.length;
+var max_colours = colours.length;
+
+function itsgonnabeokayAnimate() {
 
 // Create a Zdog illustration
 let illo = new Zdog.Illustration({
@@ -26,19 +43,6 @@ let illo = new Zdog.Illustration({
 	}
 });
 
-// Set up a font to use
-let myFont = new Zdog.Font({
-  src: './media/font/Staatliches-Regular.ttf'
-});
-
-var colours = ['#8CFAEB', '#8CD3FA', '#8CFAB4'];
-var sentences = ["It's gonna\nbe okay.", "Chin up m8", "Deep breathes",
-                 "Just relax.", "There's always\na last time.", "There's always\na first time.",
-                 "Think of all the\nthings you're\ngrateful for.", "It could \nbe worse!",
-                 "What \nnext?", "We are a \nsocial species"];
-var max_sentences = sentences.length;
-var max_colours = colours.length;
-
 // Create a text object
 // This is just a Zdog.Shape object with a couple of extra parameters!
 new Zdog.Text({
@@ -47,7 +51,7 @@ new Zdog.Text({
   value: sentences[getRandomInt(0, max_sentences)],
   fontSize: 32,
   stroke: getRandomInt(1,3),
-  translate: { y: -getRandomInt(1,10), z: -getRandomInt(1,10)},
+  translate: { y: -getRandomInt(1,50), z: -getRandomInt(1,50), x: -getRandomInt(30,50)},
   color: '#FF9393'
 });
 
@@ -150,7 +154,6 @@ var counterLeftRight = 1;
 
 var boolMouseOver = false;
 var timer;
-var stoppedElement=document.getElementById("itsgonnabeokay-canvas");
 
 function mouseStopped() { 
    boolMouseOver = false;
@@ -165,12 +168,12 @@ window.addEventListener("mousemove",function(){
 function animate() {
   if (boolMouseOver === true) {
     if (leftRightFlag === true) {
-     illo.rotate.y += 0.7;
-     illo.rotate.z += 0.03;
+     illo.rotate.y += 0.2;
+     illo.rotate.z += 0.2;
     }  
    if (leftRightFlag === false) {
-     illo.rotate.y -= 0.6;
-     illo.rotate.x += 0.02;
+     illo.rotate.y -= 0.02;
+     illo.rotate.z -= 0.02;
    }
    illo.updateRenderGraph();
     counterLeftRight++;
@@ -183,3 +186,4 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+}

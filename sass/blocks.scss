@@ -2,14 +2,10 @@
   transition: color 0.7s ease;
   color: $mainBlue;
   text-decoration: none;
-
     &:hover {
       color: $mainPink;
     }
-  
 }
-
-
 
 .pageHeader {
   margin-bottom: 5px;
