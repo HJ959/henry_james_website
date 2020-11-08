@@ -37,7 +37,6 @@ function itsgonnabeokayAnimate() {
 // Create a Zdog illustration
 let illo = new Zdog.Illustration({
     element: '.zdog-svg',
-    zoom: 3,
     // enable rotating scene with dragging
 	dragRotate: true,
 	onDragStart: function() {
