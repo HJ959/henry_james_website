@@ -32,10 +32,12 @@ var max_sentences = sentences.length;
 var max_colours = colours.length;
 
 function itsgonnabeokayAnimate() {
+  delete illo;
 
 // Create a Zdog illustration
 let illo = new Zdog.Illustration({
     element: '.zdog-svg',
+    zoom: 3,
     // enable rotating scene with dragging
 	dragRotate: true,
 	onDragStart: function() {
@@ -155,6 +157,8 @@ var counterLeftRight = 1;
 var boolMouseOver = false;
 var timer;
 
+var is_touch_device = is_touch_device1()
+
 function mouseStopped() { 
    boolMouseOver = false;
 }
@@ -166,7 +170,7 @@ window.addEventListener("mousemove",function(){
 });
 
 function animate() {
-  if (boolMouseOver === true) {
+  if (boolMouseOver === true && is_touch_device === false) {
     if (leftRightFlag === true) {
      illo.rotate.y += 0.2;
      illo.rotate.z += 0.2;
