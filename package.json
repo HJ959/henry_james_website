@@ -18,7 +18,7 @@
   "homepage": "https://github.com/HJ959/henry_james_website#readme",
   "devDependencies": {
     "del": "^5.1.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-connect": "^5.7.0",
